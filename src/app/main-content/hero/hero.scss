@@ -122,26 +122,18 @@ h1 {
   }
 }
 
-
-.hero-links {
+.hero-sozial-links {
+  position: absolute;
+  right: 32px;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  right: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  gap: 32px;
-  background-color: transparent;
-}
-
-.hero-link {
-  display: flex;
-  align-items: center;
   gap: 12px;
   margin-bottom: 0;
+  background: transparent;
 
-  a {
+  > a {
     display: flex;
     align-items: center;
   }
@@ -149,13 +141,11 @@ h1 {
   .icon {
     width: 32px;
     height: 32px;
-    transition: filter 0.2s;
   }
 
   a:hover .icon {
     content: url('../../../../public/hero/icons/mail-white.png');
   }
-
 }
 
 .left-arrow {
@@ -209,10 +199,11 @@ h1 {
 }
 
 .hero-line {
-  position: absolute;
+  
   right: 96px;
   bottom: 0;
   width: 1px;
   height: 120px;
   background: #ffffff;
+  margin-top: 12px; 
 }
