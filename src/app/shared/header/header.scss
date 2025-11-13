@@ -1,0 +1,50 @@
+header {
+    position: absolute;      
+  top: 0;
+  left: 0;
+  background-color: transparent;  
+  z-index: 1000;        
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Fira Code', monospace;
+  font-weight: 400; 
+  font-size: 20px;
+  color:#FFFFFF ;
+}
+
+nav{
+  display: flex;
+  gap: 32px;
+  background-color: transparent;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  color:#FFFFFF ;
+}
+
+nav a .hover-point {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background:  #3DCFB6;
+  opacity: 0;
+}
+
+nav a:hover .hover-point {
+  opacity: 1;
+} 
+
+.logo{
+    height: 48px;
+    background-color: transparent;
+
+}
