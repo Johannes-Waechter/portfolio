@@ -1,0 +1,119 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-image: url('../../../../public/img/Hero-Background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.hero-content {
+    background-color: transparent;
+}
+
+h1 {
+    color: #D9D9D9;
+    font-family: Karla, sans-serif;
+    font-weight: 700;
+    font-weight: bold;
+    letter-spacing: -2%;
+    line-height: 100%;
+    font-size: 128px;
+    background-color: transparent;
+}
+
+.subtitle {
+
+    color: #D9D9D9;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    background-color: transparent;
+}
+
+.hero-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+ background-color: transparent;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 172px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #FFFFFF;
+  padding: 0 24px;
+  gap: 10px;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden; // wichtig für den Lauftext
+  transition: border-color 0.3s ease;
+
+  .btn-text {
+    white-space: nowrap; // verhindert Zeilenumbruch
+    display: inline-block;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    position: relative;
+     background-color: transparent;
+  }
+
+  &:hover {
+    border-color: #3DCFB6;
+
+    .btn-text {
+      color: #3DCFB6;
+      animation: marquee 3s linear infinite; // läuft endlos
+    }
+  }
+}
+
+// Sekundärer Button
+.btn-secondary {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: transparent;
+
+  &:hover {
+ 
+    border-color: #3DCFB6;
+
+    .btn-text {
+      color: #3DCFB6;
+      animation: marquee 3s linear infinite;
+    }
+  }
+}
+
+// Keyframes für endlos durchlaufenden Text
+@keyframes marquee {
+  0% {
+    transform: translateX(0); // Startposition
+  }
+  50.99% {
+    transform: translateX(-150px); // ganz links raus
+  }
+  51% {
+    transform: translateX(+150px); // springt nach rechts außen
+  }
+  100% {
+    transform: translateX(0); // langsam wieder rein
+  }
+}
