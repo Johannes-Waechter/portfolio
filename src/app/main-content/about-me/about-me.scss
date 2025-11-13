@@ -1,0 +1,112 @@
+@import '../../../styles';
+
+h2 {
+    @include h2-style;
+}
+
+.about-me-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100vh;
+    width: 100%;
+    padding: 48px;
+    box-sizing: border-box;
+}
+
+.about-me-image-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.about-me-image {
+    width: 568px;
+    height: 568px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+    transition: filter 0.3s;
+}
+
+.about-me-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../../../public/about-me/Capa_1.png') center/cover no-repeat;
+    opacity: 0;
+    border-radius: 24px;
+    z-index: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.about-me-image-container:hover .about-me-image-bg {
+    opacity: 1;
+}
+
+.about-me-content {
+    width: 568px;
+    height: 588px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 16px;
+    background-color: transparent;
+
+    > h3 {
+        @include h3-style;
+    }
+}
+
+
+.about-me-textbox {
+    background: $ci-green-10;
+    border: 2px solid $ci-green;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    gap: 40px;
+    padding: 32px ;
+ 
+}
+
+
+.about-me-textbox * {
+  background: transparent;
+}
+
+
+.about-me-abschnitt {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 18px;
+       > p {
+        font-family: 'Karla', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        margin: 0;
+        background-color: transparent;
+    }
+}
+
+.about-me-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: transparent;
+}

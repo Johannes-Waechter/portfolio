@@ -18,7 +18,7 @@
 }
 
 h1 {
- position: relative;
+  position: relative;
   color: #D9D9D9;
   font-family: Karla, sans-serif;
   font-weight: 700;
@@ -27,7 +27,7 @@ h1 {
   line-height: 100%;
   font-size: 128px;
   background-color: transparent;
- padding: 16px 8px;
+  padding: 16px 8px;
 }
 
 .subtitle {
@@ -61,11 +61,11 @@ h1 {
   background-color: transparent;
   text-decoration: none;
   cursor: pointer;
-  overflow: hidden; // wichtig für den Lauftext
+  overflow: hidden;
   transition: border-color 0.3s ease;
 
   .btn-text {
-    white-space: nowrap; // verhindert Zeilenumbruch
+    white-space: nowrap;
     display: inline-block;
     font-family: 'Karla', sans-serif;
     font-weight: 400;
@@ -82,12 +82,12 @@ h1 {
 
     .btn-text {
       color: #3DCFB6;
-      animation: marquee 3s linear infinite; // läuft endlos
+      animation: marquee 3s linear infinite;
     }
   }
 }
 
-// Sekundärer Button
+
 .btn-secondary {
   border-color: #FFFFFF;
   color: #FFFFFF;
@@ -104,22 +104,21 @@ h1 {
   }
 }
 
-// Keyframes für endlos durchlaufenden Text
 @keyframes marquee {
   0% {
-    transform: translateX(0); // Startposition
+    transform: translateX(0);
   }
 
   50.99% {
-    transform: translateX(-150px); // ganz links raus
+    transform: translateX(-150px);
   }
 
   51% {
-    transform: translateX(+150px); // springt nach rechts außen
+    transform: translateX(+150px);
   }
 
   100% {
-    transform: translateX(0); // langsam wieder rein
+    transform: translateX(0);
   }
 }
 
@@ -159,16 +158,57 @@ h1 {
 
 }
 
-.hero-strich-left {
+.left-arrow {
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  flex-direction: column; 
   position: absolute;
-  left: 96px;
-  bottom: 0;
+  left: 32px;
+  bottom: 0;              
+  gap: 16px;              
+  transform: none;        
+}
+
+.arrow-icon {
+  height: 12px;
+  background-color: transparent;
+  animation: arrowAnimation 1s linear infinite;
+  padding: 0;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(0px); 
+  }
+  50% {
+    transform: translateY(+10px); 
+  }
+ 
+  100% {
+    transform: translateY(0px); 
+  }
+}
+.arrow-border {
+  border: 1px solid #3DCFB6;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;   
+  height: 40px;  
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero-strich-left {
+  position: static; 
   width: 1px;
-  height: 120px;
+  height: 150px;
   background: #3DCFB6;
 }
 
-.hero-strich {
+.hero-line {
   position: absolute;
   right: 96px;
   bottom: 0;
