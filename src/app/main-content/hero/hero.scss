@@ -143,8 +143,40 @@ h1 {
   }
 
   a:hover .icon {
-    content: url('../../../../public/hero/icons/mail-white.png');
+    // content: url('../../../../public/hero/icons/mail-white.png');
+
   }
+}
+
+// .icon-github:hover {
+//   content: url('../../../../public/hero/icons/Vector.png');
+// }
+
+a {
+  position: relative; /* Damit das absolute Positionieren vom Punkt funktioniert */
+  display: inline-flex;
+  align-items: center;
+}
+
+a .icon {
+  margin-left: 8px; /* Abstand zwischen Text und Icon */
+}
+
+a .hover-dot {
+  position: absolute;
+  left: -10px;       /* links vom Icon/Text */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3DCFB6;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+a:hover .hover-dot {
+  opacity: 1;        /* Sichtbar beim Hover */
 }
 
 .left-arrow {
