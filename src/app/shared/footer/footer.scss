@@ -1,0 +1,133 @@
+@import '../../../styles';
+
+.footer-section {
+  width: 100%;
+  background:transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 64px 32px 64px;
+  box-sizing: border-box;
+  min-height: 220px;
+  gap: 0;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer-col--left {
+  min-width: 260px;
+  gap: 32px;
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  font-family: 'Karla', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.footer-logo-name {
+  color: $ci-green;
+  font-family: 'Karla', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-info {
+  margin-top: 32px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-col--center {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copyright {
+  font-family: 'Fira Code', monospace;
+  font-size: 22px;
+  color: $ci-green;
+  opacity: 1;
+  text-align: center;
+}
+
+.footer-col--right {
+  min-width: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: $ci-green;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .footer-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    gap: 32px;
+    min-height: unset;
+  }
+  .footer-col--left,
+  .footer-col--right,
+  .footer-col--center {
+    align-items: center;
+    justify-content: center;
+    min-width: unset;
+  }
+  .footer-info {
+    margin-top: 16px;
+    align-items: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+}
