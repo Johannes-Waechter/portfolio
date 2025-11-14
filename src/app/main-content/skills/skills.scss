@@ -1,0 +1,74 @@
+@import '../../../styles';
+
+h2{
+    @include h2-style;
+    margin-bottom: 32px;
+}
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    padding: 48px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.skills-section h3 {
+    @include h3-style;
+    margin-bottom: 32px;
+}
+
+.about-me-textbox {
+    background: $ci-green-10;
+    border: 2px solid $ci-green;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    color: #fff;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-textbox * {
+    background: transparent;
+}
+
+.about-me-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 18px;
+    > p {
+        font-family: 'Karla', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 150%;
+        margin: 0;
+        background-color: transparent;
+    }
+}
+
+.skills-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 18px;
+    > p {
+        font-family: 'Karla', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 150%;
+        margin: 0;
+        background-color: transparent;
+    }
+}
