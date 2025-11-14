@@ -21,6 +21,16 @@ scroll-behavior: smooth;}
     letter-spacing: -3%;
   }
 
+  @mixin ci-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $ci-green;
+  opacity: 1;
+  margin: 0 8px;
+}
+
 /* karla-300 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

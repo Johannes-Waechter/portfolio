@@ -8,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Hero {
 
+  p1 = 'info';
+  p2 = 'example';
+  p3 = 'com';
+
+  get email() {
+    return `${this.p1}@${this.p2}.${this.p3}`;
+  }
+
+  get mailto() {
+    return `mailto:${this.email}`;
+  }
+
 }
