@@ -1,0 +1,98 @@
+@import '../../../styles';
+
+.portfolio-section {
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  padding: 32px 0 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.portfolio-section h3 {
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 16px;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 48px;
+  font-weight: 700;
+  color: $ci-green;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.01em;
+}
+
+.portfolio-desc {
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  margin: 0 0 32px 0;
+  opacity: 0.8;
+  max-width: 480px;
+  line-height: 1.4;
+  margin-left: 16px;
+}
+
+.portfolio-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.portfolio-item {
+  width: 100%;
+  padding: 24px 0 8px 0;
+}
+
+.portfolio-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.portfolio-project-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-left: 8px;
+}
+
+.portfolio-project-tags {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.portfolio-tags-line {
+  display: inline-block;
+  width: 120px;
+  height: 1px;
+  background: $ci-green;
+  margin: 0 12px;
+  vertical-align: middle;
+}
+
+.portfolio-divider {
+  width: 100%;
+  height: 2px;
+  background: $ci-green-10;
+  margin: 0 0 0 0;
+}
