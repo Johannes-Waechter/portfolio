@@ -3,6 +3,7 @@
 h2{
     @include h2-style;
     margin-bottom: 32px;
+    background: transparent;
 }
 
 .skills-section {
@@ -22,7 +23,18 @@ h2{
     margin-bottom: 32px;
 }
 
-.about-me-textbox {
+.skills-content-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; // beide Bereiche gleich hoch
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    background: transparent;
+}
+
+.skill-textbox {
     background: $ci-green-10;
     border: 2px solid $ci-green;
     border-radius: 16px;
@@ -35,27 +47,104 @@ h2{
     gap: 40px;
     display: flex;
     flex-direction: column;
+    flex: 1 1 0;
+    min-width: 340px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    
 }
 
-.about-me-textbox * {
+.skills-text{
     background: transparent;
 }
 
-.about-me-text {
+
+.skills-contact{
+    background: transparent;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
     gap: 16px;
-    margin-top: 18px;
-    > p {
-        font-family: 'Karla', sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 150%;
-        margin: 0;
-        background-color: transparent;
-    }
 }
+
+.skills-contact h4 {
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+   background: transparent;
+    margin-top: 50px;
+}
+
+
+
+.skills-contact h4 .highlight-green {
+    color: $ci-green;
+    background: transparent;
+}
+
+.skills-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px 32px; 
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 0;
+    min-width: 340px;
+    flex: 1 1 0;
+
+    box-sizing: border-box;
+}
+
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96px;
+    height: 112px;
+    margin-bottom: 0;
+    justify-content: flex-start;
+    background: transparent;
+}
+
+.skill-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    background: transparent;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.08);
+    
+}
+
+.skill-icon span {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    word-break: break-word;
+}
+
+
 
 .skills-text {
     display: flex;
@@ -71,4 +160,69 @@ h2{
         margin: 0;
         background-color: transparent;
     }
+}
+
+.lets-talk-btn {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  background-color: transparent;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 172px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #FFFFFF;
+  padding: 0 24px;
+  gap: 10px;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  .btn-text {
+    white-space: nowrap;
+    display: inline-block;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    position: relative;
+    background-color: transparent;
+  }
+
+  &:hover {
+    border-color: $ci-green;
+
+    .btn-text {
+      color: $ci-green;
+      animation: marquee 3s linear infinite;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  50.99% {
+    transform: translateX(-150px);
+  }
+
+  51% {
+    transform: translateX(+150px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
