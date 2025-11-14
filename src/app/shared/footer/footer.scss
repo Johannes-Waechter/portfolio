@@ -2,11 +2,12 @@
 
 .footer-section {
   width: 100%;
-  background:transparent;
+  background: transparent;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
+  position: relative;
   padding: 48px 64px 32px 64px;
   box-sizing: border-box;
   min-height: 220px;
@@ -68,6 +69,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  min-height: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .footer-copyright {
