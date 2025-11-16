@@ -6,34 +6,48 @@
     projects to see my skills in action.
   </p>
   <div class="portfolio-list">
-    <div class="portfolio-item">
-      <div class="portfolio-row">
-        <span class="portfolio-project-title">Join</span>
-        <span class="portfolio-project-tags">
-          <span class="portfolio-tags-line"></span>
-          Angular | TypeScript | HTML+CSS | Firebase
-          <span class="portfolio-tags-line"></span>
-        </span>
+    <ng-container *ngFor="let project of projects; let i = index">
+      <div class="portfolio-item"
+           (mouseenter)="showPreview(i)" (mouseleave)="hidePreview()" (click)="openDialog(i)">
+        <div class="portfolio-row">
+          <span class="portfolio-project-title">{{ project.title }}</span>
+          <span class="portfolio-project-tags">
+            <span class="portfolio-tags-line"></span>
+            {{ project.tags }}
+            <span class="portfolio-tags-line"></span>
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="portfolio-divider"></div>
-    <div class="portfolio-item">
-      <div class="portfolio-row">
-        <span class="portfolio-project-title">El Pollo Loco</span>
-        <span class="portfolio-project-tags">
-          HTML | CSS | JavaScript
-        </span>
+      <div class="portfolio-divider" *ngIf="i < projects.length - 1"></div>
+    </ng-container>
+  </div>
+
+  <!-- Miniaturansicht rechts -->
+  <div class="portfolio-preview" *ngIf="previewIndex !== null" [@fadeIn]>
+    <img [src]="projects[previewIndex].preview" alt="Preview" />
+  </div>
+
+  <!-- Dialog für Projekt-Details -->
+  <div class="portfolio-dialog-backdrop" *ngIf="dialogIndex !== null">
+    <div class="portfolio-dialog">
+      <button class="dialog-close" (click)="closeDialog()">&times;</button>
+      <div class="dialog-content">
+        <div class="dialog-number">{{ projects[dialogIndex].number }}</div>
+        <div class="dialog-title">{{ projects[dialogIndex].title }}</div>
+        <div class="dialog-desc-title">What is this project about?</div>
+        <div class="dialog-desc">{{ projects[dialogIndex].description }}</div>
+        <div class="dialog-tags">
+          <span *ngFor="let tag of projects[dialogIndex].techs" class="dialog-tag">{{ tag }}</span>
+        </div>
+        <div class="dialog-links">
+          <a *ngIf="projects[dialogIndex].github" [href]="projects[dialogIndex].github" target="_blank" class="dialog-link">GitHub ↗</a>
+          <a *ngIf="projects[dialogIndex].live" [href]="projects[dialogIndex].live" target="_blank" class="dialog-link">Live Test ↗</a>
+        </div>
       </div>
-    </div>
-    <div class="portfolio-divider"></div>
-    <div class="portfolio-item">
-      <div class="portfolio-row">
-        <span class="portfolio-project-title">DA Bubble</span>
-        <span class="portfolio-project-tags">
-          Angular | Firebase | TypeScript
-        </span>
+      <div class="dialog-image">
+        <img [src]="projects[dialogIndex].dialogImage" alt="Project Screenshot" />
       </div>
+      <button class="dialog-next" (click)="nextDialog($event)">Next project →</button>
     </div>
-    <div class="portfolio-divider"></div>
   </div>
 </section>
