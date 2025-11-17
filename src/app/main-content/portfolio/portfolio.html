@@ -29,9 +29,11 @@
   </div>
 
   <
-  <div class="portfolio-dialog-backdrop" *ngIf="dialogIndex !== null">
-    <div class="portfolio-dialog">
-      <button class="dialog-close" (click)="closeDialog()">&times;</button>
+  <div class="portfolio-dialog-backdrop" *ngIf="dialogIndex !== null" (click)="closeDialog()">
+    <div class="portfolio-dialog" (click)="$event.stopPropagation()">
+      <button class="dialog-close" (click)="closeDialog()" aria-label="Dialog schließen">
+        <img src="portfolio/close_small.png" alt="Schließen" class="dialog-close-img" />
+      </button>
       <div class="dialog-content">
         <div class="dialog-number">{{ projects[dialogIndex].number }}</div>
         <div class="dialog-title">{{ projects[dialogIndex].title }}</div>

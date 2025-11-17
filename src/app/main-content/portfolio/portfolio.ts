@@ -27,10 +27,10 @@ export class Portfolio {
       tags: 'HTML | CSS | JavaScript',
       techs: ['JavaScript', 'HTML', 'CSS'],
       preview: 'img/pollo-preview.png',
-      dialogImage: 'img/pollo-dialog.png',
+      dialogImage: 'portfolio/el-pollo-loco.png',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      github: 'https://github.com/youruser/el-pollo-loco',
-      live: 'https://el-pollo-loco.yourdomain.com',
+      github: 'https://github.com/Johannes-Waechter/El_Pollo_Loco',
+      live: 'https://johannes-waechter.de/El_Pollo_Loco/',
     },
     {
       number: '03',
@@ -40,8 +40,8 @@ export class Portfolio {
       preview: 'img/bubble-preview.png',
       dialogImage: 'img/bubble-dialog.png',
       description: 'A chat and collaboration platform for distributed agile teams. Real-time messaging, file sharing and more.',
-      github: 'https://github.com/youruser/da-bubble',
-      live: 'https://da-bubble.yourdomain.com',
+      github: 'https://github.com/Johannes-Waechter/care-share-app',
+      live: 'https://github.com/Johannes-Waechter/care-share-app',
     },
   ];
 
