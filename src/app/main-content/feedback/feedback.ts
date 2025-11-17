@@ -13,7 +13,6 @@ export class Feedback {
     { text: 'Our project benefited enormously from Lukas efficient way of working.', author: 'T.Schulz - Frontend Developer' },
     { text: 'Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.', author: 'H.Janisch - Team Partner' },
     { text: 'I had the good fortune of working with Simon...', author: 'A. Fischer - Team Partner' },
-    { text: 'Working with Lukas in a group was a great experience. He is reliable, cool, and focused, and made our project a success. He\'s super easy to work with, and I\'d happily work with him again.', author: 'A. Fischer - Team Partner' },
   ];
 
 
