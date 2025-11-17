@@ -238,26 +238,77 @@
 }
 
 .portfolio-preview {
-  position: sticky;
-  top: 120px;
-  width: 400px;
-  height: 300px;
-  background: $ci-green-10;
-  border: 2px solid $ci-green;
-  border-radius: 16px;
+  position: absolute;
+  right: 100px;
+  width: 296px;
+  height: 192px;
+  opacity: 0;
+  animation: fadeInPreview 0.3s ease-in-out forwards;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeInPreview 0.3s ease-in-out forwards;
 }
 
+.portfolio-preview::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 296px;
+  height: 192px;
+  background-image: url('../../../../public/portfolio/Capa_1.svg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.portfolio-preview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 296px;
+  height: 192px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+.portfolio-preview[data-project="join"] {
+  top: 0px;
+}
+
+.portfolio-preview[data-project="join"]::after {
+  background-image: url('../../../../public/portfolio/join.png');
+}
+
+.portfolio-preview[data-project="el-pollo-loco"] {
+  top: 50px;
+}
+
+.portfolio-preview[data-project="el-pollo-loco"]::after {
+  background-image: url('../../../../public/portfolio/el-pollo-loco.png');
+}
+
+.portfolio-preview[data-project="careshare"] {
+  top: 100px;
+}
+
+.portfolio-preview[data-project="careshare"]::after {
+  background-image: url('../../../../public/portfolio/join.png');
+}
+
+
+
 .portfolio-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
   border-radius: 14px;
+  z-index: 3;
+  position: relative;
 }
 
 @keyframes fadeInPreview {
@@ -272,6 +323,7 @@
   transition: background-color 0.3s ease;
   cursor: pointer;
   background: transparent;
+  position: relative;
 }
 
 .portfolio-item:hover {

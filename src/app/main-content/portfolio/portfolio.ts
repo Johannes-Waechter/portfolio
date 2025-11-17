@@ -23,7 +23,7 @@ export class Portfolio {
     },
     {
       number: '02',
-      title: 'El Pollo Loco',
+      title: 'El-Pollo-Loco',
       tags: 'HTML | CSS | JavaScript',
       techs: ['JavaScript', 'HTML', 'CSS'],
       preview: 'img/pollo-preview.png',

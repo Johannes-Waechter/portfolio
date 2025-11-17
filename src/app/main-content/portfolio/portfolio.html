@@ -16,17 +16,15 @@
             <span class="portfolio-project-tags">
               <span class="portfolio-tags-line"></span>
               {{ project.tags }}
-              
             </span>
           </div>
+
         </div>
         <div class="portfolio-divider"></div>
       </ng-container>
     </div>
 
-    
-    <div class="portfolio-preview" *ngIf="previewIndex !== null">
-      <img [src]="projects[previewIndex].preview" alt="Preview" />
+    <div class="portfolio-preview" *ngIf="previewIndex !== null" [attr.data-project]="projects[previewIndex].title.toLowerCase().replace(' ', '-')">
     </div>
   </div>
 
