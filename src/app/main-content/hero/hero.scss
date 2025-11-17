@@ -272,7 +272,7 @@ a:hover .hover-dot {
 }
 
 
-$scroll-duration: 10s;
+$scroll-duration: 20s;
 
 .app-banner {
   position: absolute;
@@ -289,10 +289,10 @@ $scroll-duration: 10s;
 
   &__scroll {
     display: flex;
-    gap: 56px;
     animation: scroll-left $scroll-duration linear infinite;
     background: transparent;
-    min-width: 100%;
+    width: max-content;
+    will-change: transform;
   }
 
   &__item {
@@ -310,46 +310,21 @@ $scroll-duration: 10s;
 
 .dot {
   @include ci-dot;
-  position: static; // oder entferne position
+  position: static;
   display: inline-block;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 0 60px;
   opacity: 1;
   width: 6px;
   height: 6px;
   border-radius: 50%;
   vertical-align: middle;
+  
 }
+
+
 
 
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Responsive tweak: reduce font-size on smaller screens */
-@media (max-width: 900px) {
-  .app-banner {
-    height: auto;
-    padding: 10px 20px;
-
-    &__inner {
-      gap: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    &__item {
-      font-size: 20px;
-
-      &:not(:last-child)::after {
-        right: -12px;
-      }
-    }
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

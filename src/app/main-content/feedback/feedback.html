@@ -1,7 +1,6 @@
 <section class="feedback-section">
   <h2 class="feedback-title">What my colleagues say about me</h2>
   <div class="carousel">
-    <button class="carousel-arrow left" (click)="prev()" aria-label="Previous">&#8592;</button>
     <div class="carousel-track">
    <div *ngFor="let feedback of feedbacks; let i = index"
      class="carousel-card"
@@ -15,12 +14,13 @@
         </div>
       </div>
     </div>
-    <button class="carousel-arrow right" (click)="next()" aria-label="Next">&#8594;</button>
   </div>
   <div class="carousel-dots">
+    <button class="carousel-arrow left" (click)="prev()" aria-label="Previous">&#8592;</button>
     <span *ngFor="let feedback of feedbacks; let idx = index"
       class="carousel-dot"
       [class.active]="idx === currentIndex"
       (click)="goTo(idx)"></span>
+      <button class="carousel-arrow right" (click)="next()" aria-label="Next">&#8594;</button>
   </div>
 </section>
