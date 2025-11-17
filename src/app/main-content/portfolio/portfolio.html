@@ -43,14 +43,23 @@
           <span *ngFor="let tag of projects[dialogIndex].techs" class="dialog-tag">{{ tag }}</span>
         </div>
         <div class="dialog-links">
-          <a *ngIf="projects[dialogIndex].github" [href]="projects[dialogIndex].github" target="_blank" class="dialog-link">GitHub ↗</a>
-          <a *ngIf="projects[dialogIndex].live" [href]="projects[dialogIndex].live" target="_blank" class="dialog-link">Live Test ↗</a>
+          <a *ngIf="projects[dialogIndex].github" [href]="projects[dialogIndex].github" target="_blank" class="dialog-link">
+            GitHub
+            <img src="portfolio/arrow_forward_big.svg" alt="Pfeil" class="dialog-link-arrow" />
+          </a>
+          <a *ngIf="projects[dialogIndex].live" [href]="projects[dialogIndex].live" target="_blank" class="dialog-link">
+            Live Test
+            <img src="portfolio/arrow_forward_big.svg" alt="Pfeil" class="dialog-link-arrow" />
+          </a>
         </div>
       </div>
       <div class="dialog-image">
         <img [src]="projects[dialogIndex].dialogImage" alt="Project Screenshot" />
       </div>
-      <button class="dialog-next" (click)="nextDialog($event)">Next project →</button>
+      <button class="dialog-next" (click)="nextDialog($event)">
+        <span class="dialog-next-label">Next project</span>
+        <img src="portfolio/arrow_forward_big.svg" alt="Nächster Pfeil" class="dialog-next-arrow" />
+      </button>
     </div>
   </div>
 </section>

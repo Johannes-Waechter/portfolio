@@ -1,3 +1,11 @@
+.dialog-link-arrow {
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  transform: rotate(-45deg); /* nach rechts oben */
+  transition: filter 0.2s;
+  vertical-align: middle;
+}
 @import '../../../styles';
 
 
@@ -7,7 +15,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #1C1C1C; /* Standard Hintergrundfarbe */
+  background: #1C1C1C; 
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -17,7 +25,7 @@
 }
 
 .portfolio-dialog {
-  background: $ci-green-10;
+  background: url('../../../../public/img/Hero-Background.png') center/cover no-repeat, $ci-green-10;
   border: 2px solid $ci-green;
   border-radius: 24px;
   box-sizing: border-box;
@@ -116,7 +124,7 @@
   text-decoration: none;
   border: 1px solid #fff;
   border-radius: 100px;
-  width: 172px;
+  width: 200px;
   height: 48px;
   padding: 0 24px;
   margin-right: 10px;
@@ -125,7 +133,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   opacity: 1;
   transform: rotate(0deg);
   box-sizing: border-box;
@@ -133,7 +141,7 @@
 .dialog-link:hover {
   color: $ci-green;
   border-color: $ci-green;
-  background: rgba(61, 207, 182, 0.08);
+  background: transparent
 }
 .dialog-image {
   flex: 1 1 0;
@@ -186,14 +194,34 @@
   right: 48px;
   background: transparent;
   border: none;
-  color: $ci-green;
+  color: #fff;
   font-size: 22px;
   font-family: 'Fira Code', monospace;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   transition: color 0.2s;
+  padding: 0 8px;
+  background: transparent;
 }
-.dialog-next:hover {
-  color: lighten($ci-green, 10%);
+.dialog-next-label {
+  color: #fff;
+  transition: color 0.2s;
+   background: transparent;
+}
+.dialog-next-arrow {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  transition: content 0.2s;
+   background: transparent;
+}
+.dialog-next:hover .dialog-next-label {
+  color: $ci-green;
+}
+.dialog-next:hover .dialog-next-arrow {
+  content: url('../../../../public/portfolio/arrow_forward.svg');
 }
 
 @media (max-width: 900px) {
