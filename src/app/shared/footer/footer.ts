@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './footer.scss',
 })
 export class Footer {
+  p1 = 'mail';
+  p2 = 'johannes-waechter';
+  p3 = 'de';
 
+  get email() {
+    return `${this.p1}@${this.p2}.${this.p3}`;
+  }
+
+  get mailto() {
+    return `mailto:${this.email}`;
+  }
 }

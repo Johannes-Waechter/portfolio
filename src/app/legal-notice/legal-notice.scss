@@ -1,5 +1,16 @@
 @import '../../styles';
 
+.legal-notice-section a {
+  background: transparent;
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.legal-notice-section a:hover {
+  color: $ci-green;
+}
+@import '../../styles';
+
 .legal-notice-section {
   width: 100%;
   min-height: 100vh;

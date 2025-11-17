@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class LegalNotice {
 
+  p1 = 'mail';
+  p2 = 'johannes-waechter';
+  p3 = 'de';
+
+  get email() {
+    return `${this.p1}@${this.p2}.${this.p3}`;
+  }
+
+  get mailto() {
+    return `mailto:${this.email}`;
+  }
 }

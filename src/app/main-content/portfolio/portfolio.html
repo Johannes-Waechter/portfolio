@@ -15,7 +15,10 @@
             <span class="portfolio-project-title">{{ project.title }}</span>
             <span class="portfolio-project-tags">
               <span class="portfolio-tags-line"></span>
-              {{ project.tags }}
+              <ng-container *ngFor="let tag of project.tags.split(' CI-Green '); let last = last">
+                <span class="portfolio-tag-text">{{ tag }}</span>
+                <span *ngIf="!last" class="portfolio-tag-separator">|</span>
+              </ng-container>
             </span>
           </div>
 

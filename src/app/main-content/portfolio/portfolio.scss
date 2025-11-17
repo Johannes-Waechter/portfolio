@@ -1,3 +1,16 @@
+@import '../../../styles';
+.portfolio-tag-separator {
+  color: $ci-green;
+  font-weight: bold;
+  margin: 0 8px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.portfolio-tag-text {
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Fira Code', monospace;
+}
 .dialog-skill-icon {
   width: 24px;
   height: 24px;
