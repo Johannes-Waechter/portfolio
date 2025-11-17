@@ -45,8 +45,14 @@ export class Portfolio {
     },
   ];
 
+
   previewIndex: number | null = null;
   dialogIndex: number | null = null;
+
+  getSkillIcon(tag: string): string {
+    // Erlaubt: Leerzeichen, +, #, . werden zu Bindestrich, alles klein
+    return 'portfolio/icons-skills/' + tag.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '.svg';
+  }
 
   showPreview(i: number) {
     this.previewIndex = i;

@@ -1,3 +1,10 @@
+.dialog-skill-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  display: inline-block;
+}
 .dialog-link-arrow {
   width: 28px;
   height: 28px;
@@ -107,7 +114,7 @@
   font-family: 'Fira Code', monospace;
   font-size: 16px;
   color: #fff;
-  background: $ci-green;
+  background: transparent;
   border-radius: 8px;
   padding: 4px 12px;
 }

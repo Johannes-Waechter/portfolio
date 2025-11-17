@@ -40,7 +40,10 @@
         <div class="dialog-desc-title">What is this project about?</div>
         <div class="dialog-desc">{{ projects[dialogIndex].description }}</div>
         <div class="dialog-tags">
-          <span *ngFor="let tag of projects[dialogIndex].techs" class="dialog-tag">{{ tag }}</span>
+          <span *ngFor="let tag of projects[dialogIndex].techs" class="dialog-tag">
+            <img [src]="getSkillIcon(tag)" [alt]="tag + ' Icon'" class="dialog-skill-icon" />
+            {{ tag }}
+          </span>
         </div>
         <div class="dialog-links">
           <a *ngIf="projects[dialogIndex].github" [href]="projects[dialogIndex].github" target="_blank" class="dialog-link">
