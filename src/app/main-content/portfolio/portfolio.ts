@@ -34,8 +34,8 @@ export class Portfolio {
     },
     {
       number: '03',
-      title: 'DA Bubble',
-      tags: 'Angular | Firebase | TypeScript',
+      title: 'CareShare',
+      tags: 'Angular | Firebase | TypeScript | Material Design',
       techs: ['Angular', 'Firebase', 'TypeScript'],
       preview: 'img/bubble-preview.png',
       dialogImage: 'img/bubble-dialog.png',

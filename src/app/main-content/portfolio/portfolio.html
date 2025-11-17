@@ -5,29 +5,32 @@
     Explore a selection of my work here – Interact with<br>
     projects to see my skills in action.
   </p>
-  <div class="portfolio-list">
-    <ng-container *ngFor="let project of projects; let i = index">
-      <div class="portfolio-item"
-           (mouseenter)="showPreview(i)" (mouseleave)="hidePreview()" (click)="openDialog(i)">
-        <div class="portfolio-row">
-          <span class="portfolio-project-title">{{ project.title }}</span>
-          <span class="portfolio-project-tags">
-            <span class="portfolio-tags-line"></span>
-            {{ project.tags }}
-            <span class="portfolio-tags-line"></span>
-          </span>
+  <div class="portfolio-container">
+    <div class="portfolio-list">
+      <div class="portfolio-divider"></div>
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div class="portfolio-item"
+             (mouseenter)="showPreview(i)" (mouseleave)="hidePreview()" (click)="openDialog(i)">
+          <div class="portfolio-row">
+            <span class="portfolio-project-title">{{ project.title }}</span>
+            <span class="portfolio-project-tags">
+              <span class="portfolio-tags-line"></span>
+              {{ project.tags }}
+              
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="portfolio-divider" *ngIf="i < projects.length - 1"></div>
-    </ng-container>
+        <div class="portfolio-divider"></div>
+      </ng-container>
+    </div>
+
+    
+    <div class="portfolio-preview" *ngIf="previewIndex !== null">
+      <img [src]="projects[previewIndex].preview" alt="Preview" />
+    </div>
   </div>
 
-  <!-- Miniaturansicht rechts -->
-  <div class="portfolio-preview" *ngIf="previewIndex !== null">
-    <img [src]="projects[previewIndex].preview" alt="Preview" />
-  </div>
-
-  <!-- Dialog für Projekt-Details -->
+  <
   <div class="portfolio-dialog-backdrop" *ngIf="dialogIndex !== null">
     <div class="portfolio-dialog">
       <button class="dialog-close" (click)="closeDialog()">&times;</button>
