@@ -7,6 +7,11 @@ h2{
 }
 
 .skills-section {
+    background: transparent;
+    background-image: url('../../../../public/Skills/Skills_logos/19. Skill set Background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -15,7 +20,6 @@ h2{
     width: 100%;
     padding: 48px;
     box-sizing: border-box;
-    background: transparent;
 }
 
 .skills-section h3 {
@@ -35,6 +39,7 @@ h2{
 
 .skill-textbox {
     background: $ci-green-10;
+
     border: 2px solid $ci-green;
     border-radius: 16px;
     padding: 32px;
@@ -49,10 +54,8 @@ h2{
     flex: 1 1 0;
     min-width: 340px;
     height: 100%; 
-    display: flex;
-    flex-direction: column;
     justify-content: stretch;
-    
+    position: relative;
 }
 
 .skills-text{
