@@ -106,23 +106,6 @@ h1 {
   }
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  50.99% {
-    transform: translateX(-150px);
-  }
-
-  51% {
-    transform: translateX(+150px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
 
 .hero-sozial-links {
   position: absolute;

@@ -7,13 +7,35 @@ h2 {
 
 .about-me-section {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 96px;
+    padding-right: 96px;
+    gap: 32px;
     width: 100%;
-    padding: 48px;
+    min-height: 100vh;
     box-sizing: border-box;
+}
+
+.about-me-image-container,
+.about-me-content {
+    flex: 1 1 0;
+    min-width: 320px;
+    max-width: 50%;
+}
+
+@media (max-width: 900px) {
+    .about-me-section {
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+        gap: 24px;
+    }
+    .about-me-image-container,
+    .about-me-content {
+        max-width: 100%;
+    }
 }
 
 .about-me-image-container {

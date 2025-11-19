@@ -61,20 +61,18 @@
   right: 0;
 }
 
-/* Track zurück auf zentriertes Layout mit überlappenden Karten */
 .carousel-track {
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
   width: 100%;
-  overflow: visible; /* Icon darf über Kartenrand hinausragen */
+  overflow: visible;
   position: relative;
-  min-height: 360px; /* etwas mehr Höhe für Schatten / Inhalt */
-  padding-bottom: 24px; /* zusätzlicher Abstand unten */
+  min-height: 360px;
+  padding-bottom: 24px;
 }
 
-/* Überlappende Karten mit drei sichtbaren Positionen */
 .carousel-card {
   width: 632px;
   height: 274px;
@@ -191,7 +189,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin: 64px 0 0 0; /* mehr Abstand unter dem Karussell */
+  margin: 64px 0 0 0; 
   position: relative;
   z-index: 20;
 }

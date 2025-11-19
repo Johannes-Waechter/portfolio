@@ -3,13 +3,35 @@
 .contact-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
   min-height: 100vh;
-  padding: 64px 0 0 0;
+  padding-left: 96px;
+  padding-right: 96px;
   background: transparent;
-  gap: 48px;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.contact-left,
+.contact-form {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 50%;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 24px;
+  }
+  .contact-left,
+  .contact-form {
+    max-width: 100%;
+  }
 }
 
 .contact-left {
