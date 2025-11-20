@@ -1,3 +1,14 @@
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3DCFB6;
+  opacity: 1;
+  margin: 0 8px;
+  vertical-align: middle;
+}
 *{ background-color: #1C1C1C;
   margin: 0;
 scroll-behavior: smooth;}

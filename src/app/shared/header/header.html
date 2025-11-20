@@ -1,19 +1,20 @@
 <header>
   <nav>
+    <a href="#" class="lang-switch" (click)="toggleLanguage($event)" [attr.aria-label]="('HEADER.SWITCH_LANG' | translate)">
+      <img [src]="currentLanguage === 'en' ? 'header/logo/english.svg' : 'header/logo/german.svg'" [alt]="currentLanguage === 'en' ? ('HEADER.ENGLISH' | translate) : ('HEADER.GERMAN' | translate)" class="lang-icon" />
+    </a>
     <a href="#about-me">
-      About me
+      {{ 'HEADER.ABOUT_ME' | translate }}
       <span class="hover-point"></span>
     </a>
     <a href="#skills">
-      Skills
+      {{ 'HEADER.SKILLS' | translate }}
       <span class="hover-point"></span>
     </a>
     <a href="#projects">
-      Projects
+      {{ 'HEADER.PROJECTS' | translate }}
       <span class="hover-point"></span>
     </a>
   </nav>
-
-
   <div class="logo"><img class="logo" src="header/logo/logo-colored.png" alt=""></div>
 </header>

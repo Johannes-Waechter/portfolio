@@ -1,3 +1,20 @@
+// Sprachwechsel-Icon
+.lang-switch {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.lang-icon {
+    width: 84px;
+    height: 28px;
+    transition: filter 0.2s;
+    margin-right: 8px;
+    background: transparent;
+}
 header {
     position: absolute;
     top: 0;

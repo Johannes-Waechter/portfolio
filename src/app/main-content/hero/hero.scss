@@ -49,7 +49,6 @@ h1 {
   background-color: transparent;
 }
 
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -86,6 +85,24 @@ h1 {
       color: $ci-green;
       animation: marquee 3s linear infinite;
     }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  50.99% {
+    transform: translateX(-150px);
+  }
+
+  51% {
+    transform: translateX(+150px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 

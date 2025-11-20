@@ -1,5 +1,5 @@
 <section class="feedback-section">
-  <h2 class="feedback-title">What my colleagues say about me</h2>
+  <h2 class="feedback-title">{{ 'FEEDBACK.HEADLINE' | translate }}</h2>
   <div class="carousel">
     <div class="carousel-track">
       <div class="carousel-quote-icon" aria-hidden="true"></div>
@@ -17,15 +17,15 @@
   </div>
   <!-- Navigation weiter unterhalb des Karussells -->
   <div class="carousel-dots">
-    <button class="carousel-arrow left" (click)="next()" aria-label="Previous">
-      <img src="feedback/Left.png" alt="Previous" class="arrow-img" />
+    <button class="carousel-arrow left" (click)="next()" [attr.aria-label]="'FEEDBACK.PREVIOUS' | translate">
+      <img src="feedback/Left.png" [alt]="'FEEDBACK.PREVIOUS' | translate" class="arrow-img" />
     </button>
     <span *ngFor="let feedback of feedbacks; let idx = index"
       class="carousel-dot"
       [class.active]="idx === currentIndex"
       (click)="goTo(idx)"></span>
-    <button class="carousel-arrow right" (click)="prev()" aria-label="Next">
-      <img src="feedback/right.png" alt="Next" class="arrow-img" />
+    <button class="carousel-arrow right" (click)="prev()" [attr.aria-label]="'FEEDBACK.NEXT' | translate">
+      <img src="feedback/right.png" [alt]="'FEEDBACK.NEXT' | translate" class="arrow-img" />
     </button>
   </div>
 </section>

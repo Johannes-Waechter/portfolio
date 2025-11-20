@@ -1,0 +1,67 @@
+{
+  "HEADER": {
+    "ABOUT_ME": "Über mich",
+    "SKILLS": "Fähigkeiten",
+    "PROJECTS": "Projekte"
+  },
+    "HERO": {
+      "CHECK_WORK": "Projekte",
+      "CONTACT_ME": "Kontaktiere mich",
+      "BANNER": "Frontend Developer <span class='dot'></span> Aus Wuppertal <span class='dot'></span> Bereit für neue Aufgaben <span class='dot'></span> Remote work <span class='dot'></span>"
+    },
+    "ABOUT_ME": {
+      "WHO_I_AM": "Wer ich bin",
+      "HEADLINE": "Über mich",
+      "INTRO": "Hey, ich bin Johannes! Ich programmiere leidenschaftlich gern und experimentiere viel – aktuell arbeite ich an meiner eigenen App. Ich probiere gerne Neues aus, finde Lösungen und lerne ständig dazu. Für mich bedeutet Programmieren, Ideen zum Leben zu erwecken.",
+      "LOCATION": "Ich lebe in Wuppertal, Deutschland. Ich arbeitegern remote, bin aber auch offen für Möglichkeiten in und um Wuppertal. Flexibilität und ein gutes Team sind mir dabei am wichtigsten.",
+      "MINDSET": "Ich bin sehr offen für neue Technologien und lerne gerne kontinuierlich dazu. Neugier und Anpassungsfähigkeit sind für mich der Schlüssel, um gute Ergebnisse zu erzielen.",
+      "QUALITY": "Ich sehe Probleme gerne als Rätsel. Mit analytischem Denken und Kreativität finde ich verschiedene Lösungswege, bleibe dran, bis ich sie gelöst habe, und arbeite gerne mit anderen zusammen, um noch bessere Lösungen zu finden. Jede Herausforderung ist eine Chance, etwas Neues zu lernen und meine Fähigkeiten zu schärfen."
+    },
+      "SKILLS": {
+    "TECHNOLOGIES": "Technologien",
+    "HEADLINE": "Fähigkeiten",
+    "INTRO": "Ich bin Frontend-Entwickler mit Erfahrung in HTML, CSS, JavaScript und Angular. Ich lerne gerne neue Tools und halte mich über die schnelle Entwicklung der Webwelt auf dem Laufenden.",
+    "NEED_SKILL": "Du brauchst",
+    "ANOTHER_SKILL": "eine andere Fähigkeit?",
+    "CONTACT_ME": "Melde dich gerne bei mir. Ich freue mich darauf, mein Wissen zu erweitern.",
+    "LETS_TALK": "Lass uns sprechen",
+    "HTML": "HTML",
+    "CSS": "CSS",
+    "JS": "JavaScript",
+    "ANGULAR": "Angular",
+    "TS": "TypeScript",
+    "MATERIAL": "Material Design",
+    "GIT": "Git",
+    "API": "API",
+    "FIREBASE": "Firebase",
+    "SCRUM": "Scrum",
+    "GROWTH": "Growth Mindset"
+  },
+  "PORTFOLIO": {
+    "HEADLINE": "Portfolio",
+    "FEATURED": "Ausgewählte Projekte",
+    "DESC": "Hier findest du eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "DIALOG_ABOUT": "Worum geht es in diesem Projekt?",
+    "GITHUB": "GitHub",
+    "LIVE": "Live-Demo",
+    "NEXT": "Nächstes Projekt"
+  },
+  "CONTACT": {
+    "HEADLINE": "Kontakt",
+    "WORK_TOGETHER": "Lass uns zusammenarbeiten",
+    "PROBLEM": "Hast du ein Problem zu lösen?",
+    "DESC": "Melde dich gerne bei mir und beschreibe, für welche Rolle du mich suchst. Ich zeige dir, wie ich mit meiner Arbeit Mehrwert für dein Projekt schaffe.",
+    "CTA": "Du brauchst einen Frontend-Entwickler?",
+    "LETS_TALK": "Schreib mir!",
+    "LABEL_NAME": "Wie ist dein Name?",
+    "PLACEHOLDER_NAME": "Dein Name",
+    "LABEL_EMAIL": "Wie ist deine E-Mail?",
+    "PLACEHOLDER_EMAIL": "dein@email.de",
+    "LABEL_MESSAGE": "Wie kann ich helfen?",
+    "PLACEHOLDER_MESSAGE": "Hallo Johannes, ich interessiere mich für…",
+    "PRIVACY_1": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung",
+    "PRIVACY_2": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "SAY_HELLO": "Sende Nachricht ;)"
+  }
+}

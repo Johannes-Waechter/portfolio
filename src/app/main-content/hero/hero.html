@@ -4,10 +4,10 @@
     <h1>Johannes Wächter</h1>
     <div class="hero-buttons">
       <a href="#projects" class="btn">
-        <span class="btn-text">Check my work</span>
+        <span class="btn-text">{{ 'HERO.CHECK_WORK' | translate }}</span>
       </a>
       <a href="#contact" class="btn btn-secondary">
-        <span class="btn-text">Contact me</span>
+        <span class="btn-text">{{ 'HERO.CONTACT_ME' | translate }}</span>
       </a>
     </div>
   </div>
@@ -20,24 +20,9 @@
 <section class="app-banner"  aria-label="Status banner">
   <div class="app-banner__scroll">
    
-     <p class="app-banner__item">
-      Frontend Developer <span class="dot"></span> 
-      Based in Wuppertal <span class="dot"></span> 
-      Open to work <span class="dot"></span> 
-      Available for remote work <span class="dot"></span>
-    </p>
-        <p class="app-banner__item">
-      Frontend Developer <span class="dot"></span> 
-      Based in Wuppertal <span class="dot"></span> 
-      Open to work <span class="dot"></span> 
-      Available for remote work <span class="dot"></span>
-    </p>
-       <p class="app-banner__item">
-      Frontend Developer <span class="dot"></span> 
-      Based in Wuppertal <span class="dot"></span> 
-      Open to work <span class="dot"></span> 
-      Available for remote work <span class="dot"></span>
-    </p>
+    <p class="app-banner__item" [innerHTML]="'HERO.BANNER' | translate"></p>
+    <p class="app-banner__item" [innerHTML]="'HERO.BANNER' | translate"></p>
+    <p class="app-banner__item" [innerHTML]="'HERO.BANNER' | translate"></p>
   </div>
 </section>
 

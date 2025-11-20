@@ -1,9 +1,8 @@
 <section class="portfolio-section">
-  <h3>Portfolio</h3>
-  <h2 class="portfolio-title">Featured Projects</h2>
+  <h3>{{ 'PORTFOLIO.HEADLINE' | translate }}</h3>
+  <h2 class="portfolio-title">{{ 'PORTFOLIO.FEATURED' | translate }}</h2>
   <p class="portfolio-desc">
-    Explore a selection of my work here – Interact with<br>
-    projects to see my skills in action.
+    {{ 'PORTFOLIO.DESC' | translate }}
   </p>
   <div class="portfolio-container">
     <div class="portfolio-list">
@@ -40,7 +39,7 @@
       <div class="dialog-content">
         <div class="dialog-number">{{ projects[dialogIndex].number }}</div>
         <div class="dialog-title">{{ projects[dialogIndex].title }}</div>
-        <div class="dialog-desc-title">What is this project about?</div>
+        <div class="dialog-desc-title">{{ 'PORTFOLIO.DIALOG_ABOUT' | translate }}</div>
         <div class="dialog-desc">{{ projects[dialogIndex].description }}</div>
         <div class="dialog-tags">
           <span *ngFor="let tag of projects[dialogIndex].techs" class="dialog-tag">
@@ -50,11 +49,11 @@
         </div>
         <div class="dialog-links">
           <a *ngIf="projects[dialogIndex].github" [href]="projects[dialogIndex].github" target="_blank" class="dialog-link">
-            GitHub
+            {{ 'PORTFOLIO.GITHUB' | translate }}
             <img src="portfolio/arrow_forward_big.svg" alt="Pfeil" class="dialog-link-arrow" />
           </a>
           <a *ngIf="projects[dialogIndex].live" [href]="projects[dialogIndex].live" target="_blank" class="dialog-link">
-            Live Test
+            {{ 'PORTFOLIO.LIVE' | translate }}
             <img src="portfolio/arrow_forward_big.svg" alt="Pfeil" class="dialog-link-arrow" />
           </a>
         </div>
@@ -63,7 +62,7 @@
         <img [src]="projects[dialogIndex].dialogImage" alt="Project Screenshot" />
       </div>
       <button class="dialog-next" (click)="nextDialog($event)">
-        <span class="dialog-next-label">Next project</span>
+        <span class="dialog-next-label">{{ 'PORTFOLIO.NEXT' | translate }}</span>
         <img src="portfolio/arrow_forward_big.svg" alt="Nächster Pfeil" class="dialog-next-arrow" />
       </button>
     </div>

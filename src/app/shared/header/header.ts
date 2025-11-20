@@ -1,12 +1,42 @@
-import { Component } from '@angular/core';
+
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnInit, OnDestroy {
+  currentLanguage: 'en' | 'de' = 'en';
+  private translate = inject(TranslateService);
+  private langSub: any;
 
+  ngOnInit() {
+    // Initiale Sprache setzen
+    const lang = this.translate.currentLang || this.translate.getDefaultLang() || this.translate.getBrowserLang() || 'en';
+    this.currentLanguage = lang.startsWith('de') ? 'de' : 'en';
+    // Auf Sprachwechsel reagieren
+    this.langSub = this.translate.onLangChange.subscribe((event: any) => {
+      const l = event.lang;
+      this.currentLanguage = l.startsWith('de') ? 'de' : 'en';
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langSub) this.langSub.unsubscribe();
+  }
+
+  toggleLanguage(event: Event) {
+    event.preventDefault();
+    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
+    this.translate.use(this.currentLanguage);
+  }
+
+  useLanguage(lang: 'en' | 'de') {
+    this.currentLanguage = lang;
+    this.translate.use(lang);
+  }
 }

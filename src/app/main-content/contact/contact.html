@@ -1,37 +1,36 @@
 <section class="contact-section" id="contact">
   <div class="contact-left">
-    <h3>Contact me</h3>
-    <h1>Let's work<br>together</h1>
-    <h4>Got a problem to solve?</h4>
+    <h3>{{ 'CONTACT.HEADLINE' | translate }}</h3>
+    <h1>{{ 'CONTACT.WORK_TOGETHER' | translate }}</h1>
+    <h4>{{ 'CONTACT.PROBLEM' | translate }}</h4>
     <p class="contact-desc">
-      Encourage people to contact you and describe what role you are interested in.<br>
-      Show that you will add value to their projects through your work.
+      {{ 'CONTACT.DESC' | translate }}
     </p>
     <p class="contact-cta">
-      Need a Frontend developer? <a href="#contact" class="contact-link">Let's talk!</a>
+      {{ 'CONTACT.CTA' | translate }} <a href="#contact" class="contact-link">{{ 'CONTACT.LETS_TALK' | translate }}</a>
     </p>
   </div>
   <form class="contact-form">
     <div class="contact-form-group">
-      <label for="name">What's your name?</label>
-      <input type="text" id="name" name="name" placeholder="Your name goes here" autocomplete="name" />
+      <label for="name">{{ 'CONTACT.LABEL_NAME' | translate }}</label>
+      <input type="text" id="name" name="name" [placeholder]="'CONTACT.PLACEHOLDER_NAME' | translate" autocomplete="name" />
     </div>
     <div class="contact-form-group">
-      <label for="email">What's your email?</label>
-      <input type="email" id="email" name="email" placeholder="youremail@email.com" autocomplete="email" />
+      <label for="email">{{ 'CONTACT.LABEL_EMAIL' | translate }}</label>
+      <input type="email" id="email" name="email" [placeholder]="'CONTACT.PLACEHOLDER_EMAIL' | translate" autocomplete="email" />
     </div>
     <div class="contact-form-group">
-      <label for="message">How can I help you?</label>
-      <textarea id="message" name="message" placeholder="Hello Lukas, I am interested in…"></textarea>
+      <label for="message">{{ 'CONTACT.LABEL_MESSAGE' | translate }}</label>
+      <textarea id="message" name="message" [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate"></textarea>
     </div>
     <div class="contact-form-privacy">
       <label class="contact-checkbox">
         <input type="checkbox" required />
         <span>
-          I've read the <a href="/privacy-policy" class="privacy-link">privacy policy</a> and agree to the processing of my data as outlined.
+          {{ 'CONTACT.PRIVACY_1' | translate }} <a href="/privacy-policy" class="privacy-link">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a> {{ 'CONTACT.PRIVACY_2' | translate }}
         </span>
       </label>
     </div>
-    <button type="submit" class="contact-submit-btn">Say Hello ;)</button>
+    <button type="submit" class="contact-submit-btn">{{ 'CONTACT.SAY_HELLO' | translate }}</button>
   </form>
 </section>

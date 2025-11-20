@@ -5,6 +5,7 @@ import { Skills } from './skills/skills';
 import { Portfolio } from './portfolio/portfolio';
 import { Contact } from './contact/contact';
 import { Feedback } from './feedback/feedback';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-content',
@@ -13,7 +14,7 @@ import { Feedback } from './feedback/feedback';
     Skills,
     Portfolio,
     Feedback,
-    Contact
+    Contact, TranslatePipe
   ],
   templateUrl: './main-content.html',
   styleUrl: './main-content.scss',

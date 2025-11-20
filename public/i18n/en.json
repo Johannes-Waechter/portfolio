@@ -1,0 +1,61 @@
+{
+  "HEADER": {
+    "SWITCH_LANG": "Switch to German",
+    "ENGLISH": "English",
+    "GERMAN": "German",
+    "ABOUT_ME": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects"
+  },
+  "HERO": {
+    "CHECK_WORK": "Check my work",
+    "CONTACT_ME": "Contact me",
+    "BANNER": "Frontend Developer <span class='dot'></span> Based in Wuppertal <span class='dot'></span> Open to work <span class='dot'></span> Available for remote work <span class='dot'></span>"
+  },
+  "ABOUT_ME": {
+    "WHO_I_AM": "Who I Am",
+    "HEADLINE": "About me",
+    "INTRO": "Hey, I’m Johannes! I really enjoy coding and love experimenting – I’m currently working on my own app. I enjoy trying new things, figuring out solutions, and constantly learning. For me, programming is all about bringing ideas to life.",
+    "LOCATION": "I’m based in Wuppertal, Germany. I really enjoy working remotely, but I’m also open to opportunities in and around Wuppertal. Flexibility and a good team fit are what matter most to me.",
+    "MINDSET": "I’m very open-minded and enjoy exploring new technologies. I’m enthusiastic about learning continuously and improving my skills, as I believe staying curious and adaptable is key to delivering great results.",
+    "QUALITY": "I like to approach problems as if they were puzzles. Combining analytical thinking with a bit of creativity, I explore different ways to solve them, stay persistent until I crack them, and enjoy collaborating with others to find even better solutions. Every challenge is a chance to learn something new and sharpen my skills."
+  },
+  "SKILLS": {
+    "TECHNOLOGIES": "Technologies",
+    "HEADLINE": "Skill Set",
+    "INTRO": "I am a front-end developer experienced with HTML, CSS, JavaScript and Angular. I enjoy learning new tools and staying up-to-date with the fast-paced world of web development.",
+    "NEED_SKILL": "You need",
+    "ANOTHER_SKILL": "another skill?",
+    "CONTACT_ME": "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+    "LETS_TALK": "Let's Talk",
+    "HTML": "HTML",
+    "CSS": "CSS",
+    "JS": "JavaScript",
+    "ANGULAR": "Angular",
+    "TS": "TypeScript",
+    "MATERIAL": "Material Design",
+    "GIT": "Git",
+    "API": "API",
+    "FIREBASE": "Firebase",
+    "SCRUM": "Scrum",
+    "GROWTH": "Growth mindset"
+  },
+  "CONTACT": {
+    "HEADLINE": "Contact me",
+    "WORK_TOGETHER": "Let's work together",
+    "PROBLEM": "Got a problem to solve?",
+    "DESC": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    "CTA": "Need a Frontend developer?",
+    "LETS_TALK": "Let's talk!",
+    "LABEL_NAME": "What's your name?",
+    "PLACEHOLDER_NAME": "Your name goes here",
+    "LABEL_EMAIL": "What's your email?",
+    "PLACEHOLDER_EMAIL": "youremail@email.com",
+    "LABEL_MESSAGE": "How can I help you?",
+    "PLACEHOLDER_MESSAGE": "Hello Johannes, I am interested in…",
+    "PRIVACY_1": "I've read the",
+    "PRIVACY_LINK": "privacy policy",
+    "PRIVACY_2": "and agree to the processing of my data as outlined.",
+    "SAY_HELLO": "Say Hello ;)"
+  }
+}
