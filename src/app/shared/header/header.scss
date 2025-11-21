@@ -1,4 +1,5 @@
-// Sprachwechsel-Icon
+@import '../../../styles';
+
 .lang-switch {
     display: flex;
     align-items: center;
@@ -33,21 +34,24 @@ header {
     color: #FFFFFF;
 }
 
-nav {
+.logo {
+    height: 68px;
+    background-color: transparent;
+}
+
+.desktop-nav {
     display: flex;
     gap: 32px;
     background-color: transparent;
     flex: 1;
 }
-
-nav a {
+.desktop-nav a {
     position: relative;
     text-decoration: none;
     background-color: transparent;
     color: #FFFFFF;
 }
-
-nav a .hover-point {
+.desktop-nav a .hover-point {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -58,13 +62,153 @@ nav a .hover-point {
     background: #3DCFB6;
     opacity: 0;
 }
-
-nav a:hover .hover-point {
+.desktop-nav a:hover {
+    color: $ci-green;
+}
+.desktop-nav a:hover .hover-point {
     opacity: 1;
 }
 
-.logo {
-    height: 68px;
-    background-color: transparent;
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+.burger span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    margin: 4px 0;
+    background: #3DCFB6;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
 
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 48px;
+    right: 24px;
+    width: 320px;
+    max-width: 90vw;
+    min-width: 220px;
+    background: linear-gradient(135deg, #1C1C1C 60%, #232D2A 100%);
+    z-index: 2000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s;
+    border: 1px solid $ci-green;
+    padding: 32px 0 24px 0;
+}
+.mobile-menu.open {
+    display: flex;
+}
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.mobile-menu li a {
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 8px 24px 16px 24px;
+    border-radius: 16px;
+    transition: color 0.2s;
+    position: relative;
+    display: inline-block;
+}
+.mobile-menu li a .hover-point {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $ci-green;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.mobile-menu li a:hover {
+    color: $ci-green;
+}
+.mobile-menu li a:hover .hover-point {
+    opacity: 1;
+}
+.mobile-menu .lang-toggle {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+    background: #222;
+    border-radius: 24px;
+    padding: 4px 8px;
+}
+.mobile-menu .lang-toggle button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    font-size: 18px;
+    padding: 6px 18px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.mobile-menu .lang-toggle button.active, .mobile-menu .lang-toggle button:hover {
+    color: $ci-green;
+}
+.mobile-menu .close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 2100;
+}
+
+@media (max-width: 900px) {
+    .desktop-nav {
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

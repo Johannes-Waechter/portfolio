@@ -11,14 +11,13 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class Header implements OnInit, OnDestroy {
   currentLanguage: 'en' | 'de' = 'en';
+  showMenu = false;
   private translate = inject(TranslateService);
   private langSub: any;
 
   ngOnInit() {
-    // Initiale Sprache setzen
     const lang = this.translate.currentLang || this.translate.getDefaultLang() || this.translate.getBrowserLang() || 'en';
     this.currentLanguage = lang.startsWith('de') ? 'de' : 'en';
-    // Auf Sprachwechsel reagieren
     this.langSub = this.translate.onLangChange.subscribe((event: any) => {
       const l = event.lang;
       this.currentLanguage = l.startsWith('de') ? 'de' : 'en';
