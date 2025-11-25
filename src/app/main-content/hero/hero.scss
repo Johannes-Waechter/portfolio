@@ -15,6 +15,17 @@
 
 }
 
+.hero-content-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
 .hero-content {
   background-color: transparent;
 }
@@ -135,6 +146,10 @@ h1 {
   margin-bottom: 0;
   background: transparent;
 
+  @media (min-width: 1440px) {
+    right: calc(50% - 720px + 32px);
+  }
+
   >a {
     display: flex;
     align-items: center;
@@ -216,6 +231,10 @@ a:hover .hover-dot {
   bottom: 0;
   gap: 16px;
   transform: none;
+
+  @media (min-width: 1440px) {
+    left: calc(50% - 720px + 32px);
+  }
 }
 
 .arrow-icon {
@@ -275,17 +294,41 @@ a:hover .hover-dot {
 $scroll-duration: 20s;
 
 .app-banner {
-  position: absolute;
   box-sizing: border-box;
-  bottom: 50px;
-  left: 0;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 12px 32px;
   background: rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   overflow: hidden;
   transform: rotate(-3deg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  z-index: 999;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 64px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(20,20,20,0.7) 0%, rgba(20,20,20,0) 100%);
+  }
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(20,20,20,0.7) 0%, rgba(20,20,20,0) 100%);
+  }
 
   &__scroll {
     display: flex;
@@ -312,7 +355,7 @@ $scroll-duration: 20s;
   @include ci-dot;
   position: static;
   display: inline-block;
-  margin: 0 60px;
+  margin: 0 120px;
   opacity: 1;
   width: 6px;
   height: 6px;
