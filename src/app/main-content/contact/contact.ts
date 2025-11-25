@@ -23,10 +23,10 @@ export class Contact {
 
   }
 
-    mailTest = true;
+    mailTest = false;
 
   post = {
-    endPoint: 'https://johannes-waechter/sendMail.php',
+    endPoint: 'https://johannes-waechter.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

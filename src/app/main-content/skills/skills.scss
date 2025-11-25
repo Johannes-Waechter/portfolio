@@ -145,7 +145,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 96px;
+    width: 100px;
     height: 112px;
     margin-bottom: 0;
     justify-content: flex-start;
@@ -153,8 +153,8 @@ h2{
 }
 
 .skill-icon img {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
     padding: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -171,14 +171,14 @@ h2{
     font-family: 'Fira Code', monospace;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     letter-spacing: -0.03em;
     text-align: center;
     color: rgba(255, 255, 255, 1);
     margin-top: 8px;
     display: block;
-    width: 100%;
+    width: 95%;
     word-break: break-word;
 }
 
