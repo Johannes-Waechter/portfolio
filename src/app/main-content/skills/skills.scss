@@ -1,4 +1,10 @@
 @import '../../../styles';
+.skills-technologies-heading {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 24px;
+  margin-left: 0;
+}
 
 h2{
     @include h2-style;
@@ -15,41 +21,69 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100vh;
   width: 100%;
-  padding-left: 96px;
-  padding-right: 96px;
+  padding-left: 0;
+  padding-right: 0;
   gap: 32px;
   box-sizing: border-box;
+  margin: 0;
+  position: relative;
 }
 
-.skills-content-row {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+.skills-section-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 64px auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-section-center {
   width: 100%;
   max-width: 1200px;
-  justify-content: center;
-  background: transparent;
-  gap: 32px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .skill-textbox,
 .skills-icons {
   flex: 1 1 0;
-  min-width: 320px;
-  max-width: 50%;
+
+}
+
+.skills-icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 @media (max-width: 900px) {
+  .skills-icons-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .skills-section-wrapper {
+    padding: 0 16px;
+    margin: 32px 0;
+  }
   .skills-section {
     flex-direction: column;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
     gap: 24px;
+    margin: 0;
   }
   .skills-content-row {
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 24px;
   }
   .skill-textbox,
@@ -64,13 +98,14 @@ h2{
 }
 
 .skills-content-row {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch; 
-    width: 100%;
-    max-width: 1200px;
-    justify-content: center;
-    background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; 
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  background: transparent;
 }
 
 .skill-textbox {
@@ -180,6 +215,53 @@ h2{
     display: block;
     width: 95%;
     word-break: break-word;
+}
+
+.skill-icon.growth-mindset {
+    position: relative;
+
+    .growth-overlay {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 65px;
+        height: 65px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        z-index: 2;
+    }
+
+    .growth-svg {
+        position: absolute;
+        top: -125px; 
+        left: calc(50%  + 40px); 
+        transform: translateX(-50%);
+        width: 160px;
+        height: 160px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        z-index: 3;
+    }
+
+    &:hover .growth-overlay {
+        opacity: 1;
+    }
+
+    &:hover .growth-svg {
+        opacity: 1;
+    }
+
+    &:hover img:not(.growth-overlay):not(.growth-svg) {
+        opacity: 0.2;
+        transition: opacity 0.2s;
+    }
+
+    &:hover span {
+        color: $ci-green;
+    }
 }
 
 

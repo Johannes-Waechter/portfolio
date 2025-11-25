@@ -65,10 +65,14 @@ export class Portfolio {
 
   openDialog(i: number) {
     this.dialogIndex = i;
+    document.body.classList.add('dialog-open');
+    document.body.style.overflow = 'hidden';
   }
 
   closeDialog() {
     this.dialogIndex = null;
+    document.body.classList.remove('dialog-open');
+    document.body.style.overflow = 'auto';
   }
 
   nextDialog(event: Event) {

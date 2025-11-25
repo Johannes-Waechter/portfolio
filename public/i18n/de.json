@@ -19,7 +19,7 @@
     },
       "SKILLS": {
     "TECHNOLOGIES": "Technologien",
-    "HEADLINE": "Fähigkeiten",
+    "HEADLINE": "Skill Set",
     "INTRO": "Ich bin Frontend-Entwickler mit Erfahrung in HTML, CSS, JavaScript und Angular. Ich lerne gerne neue Tools und halte mich über die schnelle Entwicklung der Webwelt auf dem Laufenden.",
     "NEED_SKILL": "Du brauchst",
     "ANOTHER_SKILL": "eine andere Fähigkeit?",
@@ -48,7 +48,7 @@
   },
   "CONTACT": {
     "HEADLINE": "Kontakt",
-    "WORK_TOGETHER": "Lass uns zusammenarbeiten",
+    "WORK_TOGETHER": "Lass uns arbeiten",
     "PROBLEM": "Hast du ein Problem zu lösen?",
     "DESC": "Melde dich gerne bei mir und beschreibe, für welche Rolle du mich suchst. Ich zeige dir, wie ich mit meiner Arbeit Mehrwert für dein Projekt schaffe.",
     "CTA": "Du brauchst einen Frontend-Entwickler?",

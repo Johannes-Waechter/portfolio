@@ -5,7 +5,9 @@
 
 .portfolio-section {
   width: 100%;
-  min-height: 100vh;
+  max-width: 1440px;
+  margin: 128px auto; 
+
   background: transparent;
   padding-left: 96px;
   padding-right: 96px;
@@ -22,12 +24,13 @@
   .portfolio-section {
     padding-left: 16px;
     padding-right: 16px;
+    margin: 64px 0; 
   }
 }
 
 .portfolio-section h3 {
   font-family: 'Fira Code', monospace;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
   margin: 0 0 8px 16px;
@@ -182,6 +185,24 @@
   letter-spacing: 0.01em;
   margin-left: 8px;
   background: transparent;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.portfolio-item:hover .portfolio-project-title::after {
+  content: '';
+  display: inline-block;
+  margin-left: 12px;
+  width: 18px;
+  height: 18px;
+  background-image: url('../../../../public/portfolio/arrow_forward.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  filter: brightness(0) invert(1); 
+  transform: rotate(-45deg); 
 }
 
 .portfolio-project-tags {
@@ -194,12 +215,31 @@
   gap: 8px;
   position: relative;
   background: transparent;
-}
 
+  // Nur die | grün, rest bleibt weiß
+  .tag-separator {
+    color: $ci-green;
+    font-weight: bold;
+    background: none;
+  }
+  span:not(.tag-separator) {
+    color: #fff;
+    background: none;
+  }
+}
 
 .portfolio-divider {
   width: calc(100% + 32px);
   height: 2px;
   background: $ci-green;
   margin: 0 -16px;
+}
+
+// Verhindert Scrollen, wenn Dialog offen ist
+body.dialog-open,
+html.dialog-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  position: fixed;
+  width: 100vw;
 }

@@ -1,20 +1,19 @@
 <div class="hero">
-  <div class="hero-content">
-    <p class="subtitle">Frontend Developer</p>
-    <h1>Johannes Wächter</h1>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn">
-        <span class="btn-text">{{ 'HERO.CHECK_WORK' | translate }}</span>
-      </a>
-      <a href="#contact" class="btn btn-secondary">
-        <span class="btn-text">{{ 'HERO.CONTACT_ME' | translate }}</span>
-      </a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="subtitle">Frontend Developer</p>
+      <h1>Johannes Wächter</h1>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">
+          <span class="btn-text">{{ 'HERO.CHECK_WORK' | translate }}</span>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <span class="btn-text">{{ 'HERO.CONTACT_ME' | translate }}</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-
-
-
 
 
 <section class="app-banner"  aria-label="Status banner">
@@ -31,8 +30,12 @@
  <div class="hero-sozial-links">
     
     <a class="vertical-mail" [href]="mailto">
-  {{ email }}
-</a>
+      {{ email }}
+    </a>
+    <a class="mail-icon-link" [href]="mailto">
+      <img src="hero/icons/mail.png" class="icon mail" alt="Mail" />
+      <span class="hover-dot"></span>
+    </a>
     
       <a href="https://github.com/Johannes-Waechter" target="_blank">
       <img src="hero/icons/Github.png" class="icon github" />
