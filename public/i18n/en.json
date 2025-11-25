@@ -56,6 +56,14 @@
     "PRIVACY_1": "I've read the",
     "PRIVACY_LINK": "privacy policy",
     "PRIVACY_2": "and agree to the processing of my data as outlined.",
-    "SAY_HELLO": "Say Hello ;)"
+    "SAY_HELLO": "Say Hello ;)",
+    "SUCCESS": "Your message has been sent!",
+    "ERROR_NAME_REQUIRED": "Please enter your name.",
+    "ERROR_NAME_MINLENGTH": "Name must be at least 2 characters.",
+    "ERROR_EMAIL_REQUIRED": "Please enter an email address.",
+    "ERROR_EMAIL_PATTERN": "Please enter a valid email address.",
+    "ERROR_MESSAGE_REQUIRED": "Please enter a message.",
+    "ERROR_MESSAGE_MINLENGTH": "Message must be at least 10 characters.",
+    "ERROR_PRIVACY_REQUIRED": "Please accept the privacy policy."
   }
 }

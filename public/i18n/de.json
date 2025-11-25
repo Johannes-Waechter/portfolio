@@ -7,7 +7,7 @@
     "HERO": {
       "CHECK_WORK": "Projekte",
       "CONTACT_ME": "Kontaktiere mich",
-      "BANNER": "Frontend Developer <span class='dot'></span> Aus Wuppertal <span class='dot'></span> Bereit für neue Aufgaben <span class='dot'></span> Remote work <span class='dot'></span>"
+      "BANNER": "Frontend Developer <span class='dot'></span> Based in Wuppertal <span class='dot'></span> Open to work <span class='dot'></span> Available for remote work <span class='dot'></span>"
     },
     "ABOUT_ME": {
       "WHO_I_AM": "Wer ich bin",
@@ -62,6 +62,14 @@
     "PRIVACY_1": "Ich habe die",
     "PRIVACY_LINK": "Datenschutzerklärung",
     "PRIVACY_2": "gelesen und stimme der Verarbeitung meiner Daten zu.",
-    "SAY_HELLO": "Sende Nachricht ;)"
+    "SAY_HELLO": "Sende Nachricht ;)",
+    "SUCCESS": "Deine Nachricht wurde verschickt!",
+    "ERROR_NAME_REQUIRED": "Bitte gib deinen Namen ein.",
+    "ERROR_NAME_MINLENGTH": "Der Name muss mindestens 2 Zeichen lang sein.",
+    "ERROR_EMAIL_REQUIRED": "Bitte gib eine E-Mail-Adresse ein.",
+    "ERROR_EMAIL_PATTERN": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "ERROR_MESSAGE_REQUIRED": "Bitte gib eine Nachricht ein.",
+    "ERROR_MESSAGE_MINLENGTH": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+    "ERROR_PRIVACY_REQUIRED": "Bitte akzeptiere die Datenschutzerklärung."
   }
 }

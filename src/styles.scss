@@ -160,12 +160,12 @@ scroll-behavior: smooth;}
   left: 0;
   width: 100px;
   height: 100px;
-  background: #3DCFB680;          // #3DCFB6 mit 50% Transparenz
+  background: #3DCFB680;         
   border-radius: 50%;
-  pointer-events: none;           // verhindert, dass es Klicks blockiert
+  pointer-events: none;           
   transform: translate(-50%, -50%);
-  transition: transform 0.05s ease-out; // smooth folgen
-  mix-blend-mode: lighten;        // optional für Glow-Effekt
+  transition: transform 0.05s ease-out; 
+  mix-blend-mode: lighten;        
   z-index: 9999;
-  filter: blur(50px);             // 90px Blur
+  filter: blur(50px);             
 }

@@ -7,30 +7,49 @@
       {{ 'CONTACT.DESC' | translate }}
     </p>
     <p class="contact-cta">
-      {{ 'CONTACT.CTA' | translate }} <a href="#contact" class="contact-link">{{ 'CONTACT.LETS_TALK' | translate }}</a>
+      {{ 'CONTACT.CTA' | translate }} <span class="contact-link">{{ 'CONTACT.LETS_TALK' | translate }}</span>
     </p>
   </div>
-  <form class="contact-form">
+
+  
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
     <div class="contact-form-group">
       <label for="name">{{ 'CONTACT.LABEL_NAME' | translate }}</label>
-      <input type="text" id="name" name="name" [placeholder]="'CONTACT.PLACEHOLDER_NAME' | translate" autocomplete="name" />
+      <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="'CONTACT.PLACEHOLDER_NAME' | translate" autocomplete="name" required #name="ngModel" minlength="2" />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="form-error">
+        <span *ngIf="name.errors?.['required']">{{ 'CONTACT.ERROR_NAME_REQUIRED' | translate }}</span>
+        <span *ngIf="name.errors?.['minlength']">{{ 'CONTACT.ERROR_NAME_MINLENGTH' | translate }}</span>
+      </div>
     </div>
     <div class="contact-form-group">
       <label for="email">{{ 'CONTACT.LABEL_EMAIL' | translate }}</label>
-      <input type="email" id="email" name="email" [placeholder]="'CONTACT.PLACEHOLDER_EMAIL' | translate" autocomplete="email" />
+      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="'CONTACT.PLACEHOLDER_EMAIL' | translate" autocomplete="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel" />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-error">
+        <span *ngIf="email.errors?.['required']">{{ 'CONTACT.ERROR_EMAIL_REQUIRED' | translate }}</span>
+        <span *ngIf="email.errors?.['pattern']">{{ 'CONTACT.ERROR_EMAIL_PATTERN' | translate }}</span>
+      </div>
     </div>
     <div class="contact-form-group">
       <label for="message">{{ 'CONTACT.LABEL_MESSAGE' | translate }}</label>
-      <textarea id="message" name="message" [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate"></textarea>
+      <textarea [(ngModel)]="contactData.message" id="message" name="message" [placeholder]="'CONTACT.PLACEHOLDER_MESSAGE' | translate" required minlength="10" #message="ngModel"></textarea>
+      <div *ngIf="message.invalid && (message.dirty || message.touched)" class="form-error">
+        <span *ngIf="message.errors?.['required']">{{ 'CONTACT.ERROR_MESSAGE_REQUIRED' | translate }}</span>
+        <span *ngIf="message.errors?.['minlength']">{{ 'CONTACT.ERROR_MESSAGE_MINLENGTH' | translate }}</span>
+      </div>
     </div>
     <div class="contact-form-privacy">
       <label class="contact-checkbox">
-        <input type="checkbox" required />
+        <input type="checkbox" required [(ngModel)]="privacyChecked" name="privacyChecked" #privacyCheckedModel="ngModel" />
         <span>
           {{ 'CONTACT.PRIVACY_1' | translate }} <a href="/privacy-policy" class="privacy-link">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a> {{ 'CONTACT.PRIVACY_2' | translate }}
         </span>
       </label>
+      <div *ngIf="showPrivacyError" class="form-error">
+        {{ 'CONTACT.ERROR_PRIVACY_REQUIRED' | translate }}
+      </div>
     </div>
-    <button type="submit" class="contact-submit-btn">{{ 'CONTACT.SAY_HELLO' | translate }}</button>
+    <button type="submit" class="contact-submit-btn" [ngClass]="{ 'success': success }">
+      {{ success ? ('CONTACT.SUCCESS' | translate) : ('CONTACT.SAY_HELLO' | translate) }}
+    </button>
   </form>
 </section>

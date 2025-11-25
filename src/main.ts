@@ -8,7 +8,7 @@ bootstrapApplication(App, appConfig)
 const cursorShadow = document.querySelector(".cursor-shadow") as HTMLElement | null;
 
 document.addEventListener("mousemove", (e: MouseEvent) => {
-  if (!cursorShadow) return; // prüfen, ob das Element existiert
+  if (!cursorShadow) return; 
 
   const x = e.clientX;
   const y = e.clientY;
