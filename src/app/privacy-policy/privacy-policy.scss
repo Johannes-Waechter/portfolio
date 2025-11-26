@@ -3,42 +3,69 @@
 .privacy-policy-section {
   width: 100%;
   min-height: 100vh;
-  padding: 48px 64px 48px 64px;
+  padding: 48px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../../../public/img/Hero-Background.png');
+  background: transparent;
+  background-image: url('/img/Hero-Background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.privacy-policy-title {
+.privacy-policy-section a {
+  background: transparent;
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.privacy-policy-section a:hover { color: $ci-green; }
+
+.privacy-policy-section h1 {
   font-family: 'Fira Code', monospace;
   font-size: 56px;
   font-weight: 700;
   color: $ci-green;
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: 24px;
+  margin: 64px 0 40px;
   letter-spacing: 0.01em;
   background: transparent;
 }
 
-.privacy-policy-section h3 {
+.privacy-policy-section h2,
+.privacy-policy-section h3,
+.privacy-policy-section h4 {
   font-family: 'Fira Code', monospace;
-  font-size: 24px;
   font-weight: 700;
   color: #fff;
   margin-top: 32px;
   margin-bottom: 8px;
   background: transparent;
-  width: 100%;
+}
+.privacy-policy-section h2 { font-size: 28px; }
+.privacy-policy-section h3 { font-size: 24px; }
+.privacy-policy-section h4 { font-size: 20px; }
+
+.privacy-policy-section p,
+.privacy-policy-section div,
+.privacy-policy-content p,
+.privacy-policy-content div {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.95;
   max-width: 800px;
+  line-height: 1.5;
+  background: transparent;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
-.privacy-policy-section ul {
+.privacy-policy-section ul,
+.privacy-policy-content ul {
   margin: 0 0 16px 24px;
   padding: 0 0 0 18px;
   color: #fff;
@@ -46,66 +73,49 @@
   font-size: 18px;
   opacity: 0.95;
   background: transparent;
-  width: 100%;
   max-width: 800px;
 }
-
-.privacy-policy-section li {
-  margin-bottom: 4px;
-  background: transparent;
-}
-
-.privacy-policy-section p {
-  color: #fff;
-  font-family: 'Karla', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  opacity: 0.95;
-  background: transparent;
-  width: 100%;
-  max-width: 800px;
-}
-
-.privacy-policy-section div {
-  color: #fff;
-  font-family: 'Karla', sans-serif;
-  font-size: 18px;
-  margin-bottom: 16px;
-  opacity: 0.95;
-  background: transparent;
-  width: 100%;
-  max-width: 800px;
-}
-
-.privacy-policy-contact {
-  margin-top: 32px;
-  font-style: italic;
-}
+.privacy-policy-section li,
+.privacy-policy-content li { margin-bottom: 4px; background: transparent; }
 
 .privacy-policy-date {
-  margin-top: 24px;
+  font-family: 'Karla', sans-serif;
   font-size: 16px;
-  opacity: 0.8;
-  text-align: center;
+  color: #fff;
+  opacity: 0.7;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
+/* Transparenz sicherstellen */
+.privacy-policy-section *,
+.privacy-policy-section *::before,
+.privacy-policy-section *::after { background: transparent !important; box-shadow: none !important; }
+.privacy-policy-section::before,
+.privacy-policy-section::after { content: none !important; }
+
 @media (max-width: 900px) {
-  .privacy-policy-section {
-    padding: 24px 16px;
-  }
-  
-  .privacy-policy-title {
-    font-size: 42px;
-  }
-  
-  .privacy-policy-section h3 {
-    font-size: 20px;
-  }
-  
+  .privacy-policy-section { padding: 24px 8px; }
+  .privacy-policy-section h1 { font-size: 36px; }
+  .privacy-policy-section h2 { font-size: 22px; }
+  .privacy-policy-section h3 { font-size: 20px; }
+  .privacy-policy-section h4 { font-size: 18px; }
   .privacy-policy-section p,
   .privacy-policy-section div,
-  .privacy-policy-section ul {
-    font-size: 16px;
-  }
+  .privacy-policy-section ul,
+  .privacy-policy-content p,
+  .privacy-policy-content div,
+  .privacy-policy-content ul { font-size: 16px; max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .privacy-policy-section { padding: 24px 8px; }
+}
+
+@media (max-width: 320px) {
+  .privacy-policy-section { padding: 16px 6px; }
+  .privacy-policy-section h1 { font-size: 28px; }
+  .privacy-policy-section h2 { font-size: 20px; }
+  .privacy-policy-section h3 { font-size: 18px; }
+  .privacy-policy-section h4 { font-size: 16px; }
 }

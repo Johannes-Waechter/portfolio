@@ -1,26 +1,21 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Header } from '../shared/header/header';
-import { Footer } from '../shared/footer/footer';
+import { Component, Inject, ChangeDetectorRef } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [Header, Footer, CommonModule],
+  imports: [CommonModule],
   template: `
-    <ng-container *ngIf="currentLang === 'de'; else enPolicy">
-      <ng-container *ngTemplateOutlet="dePolicy"></ng-container>
-    </ng-container>
-    <ng-template #enPolicy>
-      <ng-container *ngTemplateOutlet="enPolicyTemplate"></ng-container>
-    </ng-template>
-    <ng-template #dePolicy>
-      <div [innerHTML]="deHtml"></div>
-    </ng-template>
-    <ng-template #enPolicyTemplate>
-      <div [innerHTML]="enHtml"></div>
-    </ng-template>
+    <section class="privacy-policy-section">
+      <h1>Datenschutzerklärung / Privacy Policy</h1>
+      <ng-container *ngIf="currentLang === 'de' && deHtml; else enBlock">
+        <div class="privacy-policy-content" [innerHTML]="deHtml"></div>
+      </ng-container>
+      <ng-template #enBlock>
+        <div class="privacy-policy-content" [innerHTML]="enHtml"></div>
+      </ng-template>
+    </section>
   `,
   styleUrls: ['./privacy-policy.scss'],
 })
@@ -28,20 +23,48 @@ export class PrivacyPolicy {
   currentLang = 'de';
   deHtml = '';
   enHtml = '';
-  constructor(private translate: TranslateService) {
-    this.currentLang = this.translate.currentLang;
-    this.loadHtml();
+  private readonly baseHref: string;
+  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private cdr: ChangeDetectorRef) {
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang() || 'de';
+    const baseTag = this.document.getElementsByTagName('base')[0];
+    this.baseHref = baseTag?.getAttribute('href') || '/';
+    this.preloadHtml();
     this.translate.onLangChange.subscribe(lang => {
       this.currentLang = lang.lang;
-      this.loadHtml();
+      // Beide Varianten sind vorab geladen; kein zusätzliches Fetch nötig
     });
   }
 
-  async loadHtml() {
-    if (this.currentLang === 'de') {
-      this.deHtml = await fetch('/privacy-policy/privacy-policy.de.html').then(r => r.text());
-    } else {
-      this.enHtml = await fetch('/privacy-policy/privacy-policy.en.html').then(r => r.text());
+  async preloadHtml() {
+    try {
+      const base = '/';
+      // Lade beide Sprachversionen, damit initial kein leerer Zustand entsteht
+      const deUrl = `${base}privacy-policy/privacy-policy.de.html`;
+      const enUrl = `${base}privacy-policy/privacy-policy.en.html`;
+
+      const [deRes, enRes] = await Promise.all([
+        fetch(deUrl, { cache: 'no-store' }),
+        fetch(enUrl, { cache: 'no-store' })
+      ]);
+
+      if (deRes.ok) {
+        this.deHtml = await deRes.text();
+      } else {
+        console.error('Failed to load DE policy:', deRes.status);
+        this.deHtml = '<p>Die Datenschutzerklärung konnte nicht geladen werden.</p>';
+      }
+
+      if (enRes.ok) {
+        this.enHtml = await enRes.text();
+      } else {
+        console.error('Failed to load EN policy:', enRes.status);
+        this.enHtml = '<p>Privacy policy could not be loaded.</p>';
+      }
+      this.cdr.markForCheck();
+    } catch (e) {
+      console.error('Failed to load privacy policy HTML:', e);
+      this.deHtml = this.deHtml || '<p>Die Datenschutzerklärung konnte nicht geladen werden.</p>';
+      this.enHtml = this.enHtml || '<p>Privacy policy could not be loaded.</p>';
     }
   }
 }
