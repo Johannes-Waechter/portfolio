@@ -40,6 +40,15 @@
     "SCRUM": "Scrum",
     "GROWTH": "Growth mindset"
   },
+  "PORTFOLIO": {
+    "HEADLINE": "Portfolio",
+    "FEATURED": "Featured Projects",
+    "DESC": "Here you’ll find a selection of my work – interact with the projects to see my skills in action.",
+    "DIALOG_ABOUT": "What is this project about?",
+    "GITHUB": "GitHub",
+    "LIVE": "Live Demo",
+    "NEXT": "Next Project"
+  },
   "CONTACT": {
     "HEADLINE": "Contact me",
     "WORK_TOGETHER": "Let's work together",
