@@ -49,6 +49,7 @@
     "LIVE": "Live Demo",
     "NEXT": "Next Project"
   },
+
   "CONTACT": {
     "HEADLINE": "Contact me",
     "WORK_TOGETHER": "Let's work together",
@@ -74,5 +75,69 @@
     "ERROR_MESSAGE_REQUIRED": "Please enter a message.",
     "ERROR_MESSAGE_MINLENGTH": "Message must be at least 10 characters.",
     "ERROR_PRIVACY_REQUIRED": "Please accept the privacy policy."
+  },
+    "FOOTER": {
+    "WEB_DEVELOPER": "Web Developer",
+    "LOCATION": "Wuppertal, Germany",
+    "COPYRIGHT": "© Johannes Wächter 2025",
+    "GITHUB": "Github",
+    "LINKEDIN": "LinkedIn",
+    "EMAIL": "Email",
+    "LEGAL": "Legal Notice",
+    "PRIVACY": "Privacy Policy"
+  }
+,
+  "LEGAL": {
+    "TITLE": "Legal Notice",
+    "IMPRINT": "Imprint",
+    "NAME": "Johannes Wächter",
+    "ADDRESS": "Hasenbusch 33",
+    "CITY": "42113 Wuppertal",
+    "BOARD": "Exploring the Board",
+    "EMAIL": "Email:",
+    "ACCEPTANCE": "Acceptance of terms",
+    "ACCEPTANCE_TEXT": "By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
+    "SCOPE": "Scope and ownership of the product",
+    "SCOPE_TEXT1": "Portfolio has been developed as part of a student group project in a web development bootcamp at the Developer Akademie GmbH. It has an educational purpose and is not intended for extensive personal & business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.",
+    "SCOPE_TEXT2": "The design of Portfolio is owned by the Developer Akademie GmbH. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.",
+    "PROPRIETARY": "Proprietary rights",
+    "PROPRIETARY_TEXT": "Aside from the design owned by Developer Akademie GmbH, we, the listed students, retain all proprietary rights in Portfolio, including any associated copyrighted material, trademarks, and other proprietary information.",
+    "USE": "Use of the product",
+    "USE_TEXT": "Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of Portfolio for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of Portfolio.",
+    "WARRANTY": "Disclaimer of warranties and limitation of liability",
+    "WARRANTY_TEXT": "Portfolio is provided 'as is' without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the Developer Akademie, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of Portfolio.",
+    "INDEMNITY": "Indemnity",
+    "INDEMNITY_TEXT": "You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice.",
+    "CONTACT": "For any questions or notices, please contact us at [Contact Email].",
+    "DATE": "Date: October, 17, 2025"
+  },
+  "PRIVACY": {
+    "TITLE": "Privacy Policy",
+    "COLLECT": "Information We Collect",
+    "COLLECT_TEXT": "We collect information you provide directly to us when you use our portfolio website, such as when you contact us through our contact form or interact with our content.",
+    "USE": "How We Use Your Information",
+    "USE_TEXT": "We use the information we collect to:",
+    "USE_LIST1": "Respond to your inquiries and requests",
+    "USE_LIST2": "Improve our website and user experience",
+    "USE_LIST3": "Comply with legal obligations",
+    "SHARE": "Information Sharing and Disclosure",
+    "SHARE_TEXT": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this Privacy Policy or as required by law.",
+    "SECURITY": "Data Security",
+    "SECURITY_TEXT": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.",
+    "COOKIES": "Cookies and Tracking Technologies",
+    "COOKIES_TEXT": "Our website may use cookies and similar tracking technologies to enhance your browsing experience. You can control cookie settings through your browser preferences.",
+    "THIRD": "Third-Party Services",
+    "THIRD_TEXT": "Our website may contain links to third-party websites or integrate with third-party services. This Privacy Policy does not apply to those external sites or services.",
+    "RETENTION": "Data Retention",
+    "RETENTION_TEXT": "We retain your personal information only as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law.",
+    "RIGHTS": "Your Rights",
+    "RIGHTS_TEXT": "Depending on your location, you may have certain rights regarding your personal information, including the right to access, update, or delete your data.",
+    "CONTACT_HEAD": "Contact Information",
+    "CONTACT_TEXT": "If you have any questions about this Privacy Policy or our data practices, please contact us at:",
+    "CONTACT_EMAIL": "Email: johannes.waechter@example.com",
+    "CHANGES": "Changes to This Privacy Policy",
+    "CHANGES_TEXT": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date.",
+    "CONTACT_QUESTIONS": "For any questions or concerns regarding your privacy, please don't hesitate to contact us.",
+    "DATE": "Last updated: November 2025"
   }
 }
