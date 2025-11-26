@@ -47,7 +47,18 @@
     "DIALOG_ABOUT": "What is this project about?",
     "GITHUB": "GitHub",
     "LIVE": "Live Demo",
-    "NEXT": "Next Project"
+    "NEXT": "Next Project",
+    "PROJECTS": {
+      "JOIN": {
+        "DESC": "A Kanban project management tool inspired by Trello and Jira. Organize tasks, collaborate with your team, and track progress visually."
+      },
+      "EL_POLLO_LOCO": {
+        "DESC": "Jump, run and throw game based on object-oriented approach. Help Pepe collect coins and tabasco to defeat the crazy hen."
+      },
+      "CARESHARE": {
+        "DESC": "CareShare is an app for shared holiday homes that simplifies the management of bookings, calendars, access, tasks, and expenses"
+      }
+    }
   },
 
   "CONTACT": {
