@@ -3,7 +3,7 @@
 .privacy-policy-section {
   width: 100%;
   min-height: 100vh;
-  padding: 48px 0;
+  padding: 48px 0 48px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,6 @@
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 .privacy-policy-section a {
@@ -22,7 +21,9 @@
   text-decoration: underline;
   transition: color 0.2s;
 }
-.privacy-policy-section a:hover { color: $ci-green; }
+.privacy-policy-section a:hover {
+  color: $ci-green;
+}
 
 .privacy-policy-section h1 {
   font-family: 'Fira Code', monospace;
@@ -30,7 +31,8 @@
   font-weight: 700;
   color: $ci-green;
   text-align: center;
-  margin: 64px 0 40px;
+  margin-bottom: 40px;
+  margin-top: 24px;
   letter-spacing: 0.01em;
   background: transparent;
 }
@@ -57,11 +59,10 @@
   font-size: 18px;
   color: #fff;
   opacity: 0.95;
+  background-color: transparent !important;
   max-width: 800px;
   line-height: 1.5;
   background: transparent;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
 }
 
 .privacy-policy-section ul,
@@ -73,10 +74,16 @@
   font-size: 18px;
   opacity: 0.95;
   background: transparent;
-  max-width: 800px;
+}
+.privacy-policy-section *::before,
+.privacy-policy-section *::after {
+  background: transparent !important;
 }
 .privacy-policy-section li,
-.privacy-policy-content li { margin-bottom: 4px; background: transparent; }
+.privacy-policy-content li {
+  margin-bottom: 4px;
+  background: transparent;
+}
 
 .privacy-policy-date {
   font-family: 'Karla', sans-serif;
@@ -87,35 +94,45 @@
   margin-bottom: 0;
 }
 
-/* Transparenz sicherstellen */
-.privacy-policy-section *,
-.privacy-policy-section *::before,
-.privacy-policy-section *::after { background: transparent !important; box-shadow: none !important; }
-.privacy-policy-section::before,
-.privacy-policy-section::after { content: none !important; }
-
 @media (max-width: 900px) {
-  .privacy-policy-section { padding: 24px 8px; }
+  .privacy-policy-section {
+    padding: 24px 8px;
+  }
   .privacy-policy-section h1 { font-size: 36px; }
   .privacy-policy-section h2 { font-size: 22px; }
   .privacy-policy-section h3 { font-size: 20px; }
   .privacy-policy-section h4 { font-size: 18px; }
-  .privacy-policy-section p,
-  .privacy-policy-section div,
-  .privacy-policy-section ul,
-  .privacy-policy-content p,
-  .privacy-policy-content div,
-  .privacy-policy-content ul { font-size: 16px; max-width: 100%; }
+  .privacy-policy-section *,
+  .privacy-policy-section *::before,
+  .privacy-policy-section *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .privacy-policy-section::before,
+  .privacy-policy-section::after {
+    content: none !important;
+  }
+
+  .privacy-policy-content {
+    background: transparent !important;
+  }
+  .privacy-policy-content ul {
+    font-size: 16px;
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 600px) {
-  .privacy-policy-section { padding: 24px 8px; }
+/* Override: Alle Texte außer Überschriften in grün (hoch spezifisch) */
+.privacy-policy-section .privacy-policy-content p,
+.privacy-policy-section .privacy-policy-content div,
+.privacy-policy-section .privacy-policy-content ul,
+.privacy-policy-section .privacy-policy-content li {
+  color: $ci-green !important;
 }
 
-@media (max-width: 320px) {
-  .privacy-policy-section { padding: 16px 6px; }
-  .privacy-policy-section h1 { font-size: 28px; }
-  .privacy-policy-section h2 { font-size: 20px; }
-  .privacy-policy-section h3 { font-size: 18px; }
-  .privacy-policy-section h4 { font-size: 16px; }
+/* Links ebenfalls grün, mit Unterstreichung – ohne !important */
+.privacy-policy-section .privacy-policy-content a {
+  color: $ci-green;
+  text-decoration: underline;
 }

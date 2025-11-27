@@ -1,9 +1,21 @@
 <header>
   <div class="header-content">
     <nav class="desktop-nav">
-      <a href="#" class="lang-switch" (click)="toggleLanguage($event)" [attr.aria-label]="('HEADER.SWITCH_LANG' | translate)">
-        <img [src]="currentLanguage === 'en' ? 'header/logo/english.svg' : 'header/logo/german.svg'" [alt]="currentLanguage === 'en' ? ('HEADER.ENGLISH' | translate) : ('HEADER.GERMAN' | translate)" class="lang-icon" />
-      </a>
+      <div class="language-toggle" aria-label="Sprachen umschalten">
+        <button 
+          class="language-button"
+          [class.active]="currentLanguage === 'en'" 
+          (click)="useLanguage('en')">
+          EN
+        </button>
+        <button 
+          class="language-button"
+          [class.active]="currentLanguage === 'de'" 
+          (click)="useLanguage('de')">
+          DE
+        </button>
+        <div class="language-slider"></div>
+      </div>
       <a href="#about-me">
         {{ 'HEADER.ABOUT_ME' | translate }}
         <span class="hover-point"></span>
@@ -46,9 +58,21 @@
           </a>
         </li>
         <li>
-          <a href="#" class="lang-switch" (click)="toggleLanguage($event)" [attr.aria-label]="('HEADER.SWITCH_LANG' | translate)">
-            <img [src]="currentLanguage === 'en' ? 'header/logo/english.svg' : 'header/logo/german.svg'" [alt]="currentLanguage === 'en' ? ('HEADER.ENGLISH' | translate) : ('HEADER.GERMAN' | translate)" class="lang-icon" />
-          </a>
+          <div class="language-toggle" aria-label="Sprachen umschalten">
+            <button 
+              class="language-button"
+              [class.active]="currentLanguage === 'en'" 
+              (click)="useLanguage('en'); showMenu = false">
+              EN
+            </button>
+            <button 
+              class="language-button"
+              [class.active]="currentLanguage === 'de'" 
+              (click)="useLanguage('de'); showMenu = false">
+              DE
+            </button>
+            <div class="language-slider"></div>
+          </div>
         </li>
       </ul>
     </div>

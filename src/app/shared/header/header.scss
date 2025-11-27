@@ -1,21 +1,46 @@
 @import '../../../styles';
 
-.lang-switch {
+
+.language-toggle {
     display: flex;
     align-items: center;
-    margin-right: 16px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
-}
-.lang-icon {
+    position: relative;
     width: 84px;
     height: 28px;
-    transition: filter 0.2s;
-    margin-right: 8px;
-    background: transparent;
+    border: 1px solid $ci-green;
+    border-radius: 999px;
+    margin-right: 16px;
 }
+.language-toggle:hover { border-color: #FFFFFF; }
+.language-button {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba($color: $ci-green, $alpha: 0.5);
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.25s ease;
+    padding: 0;
+}
+.language-button:hover { color: $ci-green; }
+.language-button.active { color: #FFFFFF; font-weight: 700; }
+.language-slider {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: $ci-green;
+    width: 44px;
+    height: 28px;
+    border-radius: 999px;
+    z-index: 1;
+    transition: transform 0.25s ease;
+}
+:host-context(.language-en) .language-slider { transform: translateX(0); }
+:host-context(.language-de) .language-slider { transform: translateX(40px); }
 header {
     position: absolute;
     top: 0;

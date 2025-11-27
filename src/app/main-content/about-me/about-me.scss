@@ -2,15 +2,17 @@
 
 h2 {
     @include h2-style;
-    margin-bottom: 32;
+    margin-bottom: 32px; /* Einheit korrigiert */
+    scroll-margin-top: 120px; /* Beim Ankern nicht von Header überdeckt */
 }
 
 .about-me-section-wrapper {
     width: 100%;
     max-width: 1440px;
     margin: 64px auto; // Abstand oben und unten
-    padding: 0 2rem;
+    padding: 32px 2rem 0 2rem; /* Extra Top-Padding damit Überschrift nie abgeschnitten wirkt */
     box-sizing: border-box;
+    scroll-margin-top: 120px; /* Falls direkt zu Section gesprungen wird */
 }
 
 .about-me-section {
@@ -34,8 +36,9 @@ h2 {
 
 .about-me-image-container {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    max-width: 600px;
+    /* entfernte feste Höhe, erlaubt dynamisches Wachsen */
     z-index: 1;
     display: flex;
     align-items: flex-start;
@@ -43,8 +46,7 @@ h2 {
 }
 
 .about-me-image {
-    width: 568px;
-    height: 568px;
+    width: clamp(320px, 40vw, 568px);
     height: auto;
     border-radius: 30px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
@@ -57,8 +59,8 @@ h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 568px;
-    height: 568px;
+    width: clamp(320px, 40vw, 568px);
+    height: clamp(320px, 40vw, 568px);
     transform: translate(-50%, -50%);
     background: url('../../../../public/about-me/Capa_1.png') center/cover no-repeat;
     opacity: 0;
@@ -73,18 +75,20 @@ h2 {
 }
 
 .about-me-content {
-    width: 568px;
-    height: 588px;
+    width: 100%;
+    max-width: 568px;
+    /* entfernte feste Höhe */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-bottom: 16px;
     background-color: transparent;
 
     > h3 {
         @include h3-style;
         margin-bottom: 32px;
+        scroll-margin-top: 120px;
     }
 }
 
@@ -93,14 +97,12 @@ h2 {
     background: $ci-green-10;
     border: 2px solid $ci-green;
     border-radius: 16px;
-    padding: 24px;
+    padding: 40px 32px 32px 32px; /* Mehr Top-Padding für Überschrift Sichtbarkeit */
     width: 100%;
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
     color: #fff;
     gap: 40px;
-    padding: 32px ;
- 
 }
 
 
@@ -140,20 +142,19 @@ h2 {
 
 @media (max-width: 1200px) {
     .about-me-image-container {
-        width: 400px;
-        height: 400px;
+        max-width: 400px;
     }
     .about-me-image,
     .about-me-image-bg {
-        width: 380px;
-        height: 380px;
+        width: clamp(300px, 50vw, 400px);
+        height: clamp(300px, 50vw, 400px);
         border-radius: 24px;
     }
 }
 
 @media (max-width: 900px) {
     .about-me-section-wrapper {
-        padding: 0 16px;
+        padding: 24px 16px 0 16px; /* Mobile ebenfalls etwas Luft oben */
     }
     .about-me-section {
         flex-direction: column;
@@ -166,27 +167,44 @@ h2 {
     .about-me-content {
         max-width: 100%;
     }
-    .about-me-image-container {
-        width: 100vw;
-        max-width: 400px;
-        height: auto;
-        min-width: unset;
-        margin: 0 auto;
-        justify-content: center;
-    }
-    .about-me-image,
-    .about-me-image-bg {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        border-radius: 20px;
-    }
+        .about-me-image-container {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                justify-content: center;
+        }
+        .about-me-image,
+        .about-me-image-bg {
+                width: clamp(240px, 70vw, 320px);
+                height: clamp(240px, 70vw, 320px);
+                aspect-ratio: 1 / 1;
+                border-radius: 20px;
+        }
     .about-me-content {
-        width: 100%;
-        height: auto;
+                width: 100%;
         padding-bottom: 0;
         align-items: stretch;
         justify-content: flex-start;
+    }
+}
+
+/* Bei sehr niedriger Fensterhöhe: Bild zuerst schrumpfen statt Text wegdrücken */
+@media (max-height: 800px) {
+    .about-me-image,
+    .about-me-image-bg {
+        width: clamp(200px, 35vh, 440px);
+        height: clamp(200px, 35vh, 440px);
+    }
+}
+
+@media (max-height: 600px) {
+    .about-me-image,
+    .about-me-image-bg {
+        width: clamp(160px, 30vh, 360px);
+        height: clamp(160px, 30vh, 360px);
+        border-radius: 18px;
+    }
+    .about-me-textbox {
+        padding-top: 32px; /* Etwas Raum, aber kompakter Gesamtblock */
     }
 }

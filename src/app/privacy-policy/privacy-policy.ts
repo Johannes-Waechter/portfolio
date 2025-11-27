@@ -1,4 +1,4 @@
-import { Component, Inject, ChangeDetectorRef } from '@angular/core';
+import { Component, Inject, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
   imports: [CommonModule],
   template: `
     <section class="privacy-policy-section">
-      <h1>Datenschutzerklärung / Privacy Policy</h1>
       <ng-container *ngIf="currentLang === 'de' && deHtml; else enBlock">
         <div class="privacy-policy-content" [innerHTML]="deHtml"></div>
       </ng-container>
@@ -18,6 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
     </section>
   `,
   styleUrls: ['./privacy-policy.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PrivacyPolicy {
   currentLang = 'de';

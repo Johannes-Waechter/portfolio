@@ -28,14 +28,10 @@ export class Header implements OnInit, OnDestroy {
     if (this.langSub) this.langSub.unsubscribe();
   }
 
-  toggleLanguage(event: Event) {
-    event.preventDefault();
-    this.currentLanguage = this.currentLanguage === 'en' ? 'de' : 'en';
-    this.translate.use(this.currentLanguage);
-  }
-
   useLanguage(lang: 'en' | 'de') {
     this.currentLanguage = lang;
     this.translate.use(lang);
+    document.documentElement.classList.remove('language-en', 'language-de');
+    document.documentElement.classList.add('language-' + lang);
   }
 }
