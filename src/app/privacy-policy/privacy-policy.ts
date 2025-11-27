@@ -31,16 +31,16 @@ export class PrivacyPolicy {
     this.preloadHtml();
     this.translate.onLangChange.subscribe(lang => {
       this.currentLang = lang.lang;
-      // Beide Varianten sind vorab geladen; kein zusätzliches Fetch nötig
+      
     });
   }
 
   async preloadHtml() {
     try {
-      const base = '/';
-      // Lade beide Sprachversionen, damit initial kein leerer Zustand entsteht
-      const deUrl = `${base}privacy-policy/privacy-policy.de.html`;
-      const enUrl = `${base}privacy-policy/privacy-policy.en.html`;
+      const base = this.baseHref || './';
+
+      const deUrl = `${base}static/privacy/privacy-policy.de.html`;
+      const enUrl = `${base}static/privacy/privacy-policy.en.html`;
 
       const [deRes, enRes] = await Promise.all([
         fetch(deUrl, { cache: 'no-store' }),

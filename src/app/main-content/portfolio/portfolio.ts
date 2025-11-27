@@ -37,7 +37,7 @@ export class Portfolio {
       number: '03',
       title: 'CareShare',
       tags: 'Angular | Firebase | TypeScript | Material Design',
-      techs: ['Angular', 'Firebase', 'TypeScript'],
+      techs: ['Angular', 'Firebase', 'TypeScript' , 'Material Design' ],
       preview: 'img/bubble-preview.png',
       dialogImage: 'portfolio/join.png',
       descriptionKey: 'PORTFOLIO.PROJECTS.CARESHARE.DESC',
@@ -51,7 +51,7 @@ export class Portfolio {
   dialogIndex: number | null = null;
 
   getSkillIcon(tag: string): string {
-    // Erlaubt: Leerzeichen, +, #, . werden zu Bindestrich, alles klein
+  
     return 'portfolio/icons-skills/' + tag.toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '.svg';
   }
 

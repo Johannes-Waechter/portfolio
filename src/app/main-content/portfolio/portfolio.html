@@ -36,6 +36,10 @@
       <div class="dialog-content">
         <div class="dialog-number">{{ projects[dialogIndex].number }}</div>
         <div class="dialog-title">{{ projects[dialogIndex].title }}</div>
+        
+        <div class="dialog-image-inline">
+          <img [src]="projects[dialogIndex].dialogImage" alt="Project Screenshot" />
+        </div>
         <div class="dialog-desc-title">{{ 'PORTFOLIO.DIALOG_ABOUT' | translate }}</div>
         <div class="dialog-desc">{{ projects[dialogIndex].descriptionKey | translate }}</div>
         <div class="dialog-tags">

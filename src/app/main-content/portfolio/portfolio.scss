@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 48px;
+  gap: 10px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -61,37 +61,7 @@
 .portfolio-list {
   flex: 1;
   max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
-
-.portfolio-preview {
-  position: absolute;
-  right: 20px;
-  width: 296px;
-  height: 192px;
-  opacity: 0;
-  animation: fadeInPreview 0.3s ease-in-out forwards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio-preview::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 296px;
-  height: 192px;
-  background-image: url('../../../../public/portfolio/Capa_1.svg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  z-index: 1;
-}
-
 .portfolio-preview::after {
   content: '';
   position: absolute;
@@ -105,24 +75,36 @@
   z-index: 2;
 }
 
-.portfolio-preview[data-project="join"] {
-  top: 0px;
+.portfolio-preview::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 296px;
+  height: 192px;
+  background-image: url('../../../../public/portfolio/Capa_1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.portfolio-preview {
+  flex: 0 0 296px;
+  align-self: flex-start;
+  position: relative;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 .portfolio-preview[data-project="join"]::after {
   background-image: url('../../../../public/portfolio/join.png');
 }
 
-.portfolio-preview[data-project="el-pollo-loco"] {
-  top: 50px;
-}
-
 .portfolio-preview[data-project="el-pollo-loco"]::after {
   background-image: url('../../../../public/portfolio/el-pollo-loco.png');
-}
-
-.portfolio-preview[data-project="careshare"] {
-  top: 100px;
 }
 
 .portfolio-preview[data-project="careshare"]::after {
@@ -206,7 +188,7 @@
   position: relative;
   background: transparent;
 
-  // Nur die | grün, rest bleibt weiß
+
   .tag-separator {
     color: $ci-green;
     font-weight: bold;
@@ -233,46 +215,15 @@
   .portfolio-title { font-size: 36px; }
   .portfolio-section h3 { font-size: 20px; margin-left: 8px; }
   .portfolio-desc { font-size: 15px; margin-left: 8px; max-width: 100%; }
-  .portfolio-container {
-    flex-direction: column;
-    gap: 32px;
-    align-items: stretch;
-  }
-  .portfolio-preview {
-    position: static;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    height: 220px;
-  }
-  .portfolio-preview::before,
-  .portfolio-preview::after {
-    width: 100%;
-    height: 100%;
-  }
   .portfolio-item { margin: 0; padding: 20px 12px; }
   .portfolio-divider { width: 100%; margin: 0; }
 }
 
 @media (max-width: 700px) {
   .portfolio-row {
-    flex-direction: column !important;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 8px;
-  }
-  .portfolio-project-title {
-    display: block;
-    width: 100%;
-    margin-bottom: 6px;
-  }
-  .portfolio-project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: flex-start;
-    margin-left: 8px;
-    margin-top: 0;
-    row-gap: 4px;
   }
 }
 
