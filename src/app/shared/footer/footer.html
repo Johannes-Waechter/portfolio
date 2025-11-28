@@ -23,8 +23,8 @@
         <li><a href="https://github.com/Johannes-Waechter/" target="_blank" rel="noopener">{{ 'FOOTER.GITHUB' | translate }}</a></li>
         <li><a href="https://linkedin.com/" target="_blank" rel="noopener">{{ 'FOOTER.LINKEDIN' | translate }}</a></li>
         <li><a [href]="mailto">{{ 'FOOTER.EMAIL' | translate }}</a></li>
-        <li><a href="/legal-notice">{{ 'FOOTER.LEGAL' | translate }}</a></li>
-        <li><a href="/privacy-policy">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
+        <li><a [routerLink]="'/legal-notice'">{{ 'FOOTER.LEGAL' | translate }}</a></li>
+        <li><a [routerLink]="'/privacy-policy'">{{ 'FOOTER.PRIVACY' | translate }}</a></li>
       </ul>
     </div>
   </div>

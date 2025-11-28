@@ -12,7 +12,7 @@
   width: 28px;
   height: 28px;
   margin-left: 8px;
-  transform: rotate(-45deg); /* nach rechts oben */
+  transform: rotate(-45deg); 
   transition: filter 0.2s;
   vertical-align: middle;
 }
@@ -38,7 +38,6 @@
   border-radius: 24px;
   box-sizing: border-box;
   padding: 38px 38px 32px 38px;
-  /* Feste Größe für konsistentes Weiterskippen (Desktop) */
   width: 900px;
   height: 600px;
   color: #fff;
@@ -50,7 +49,7 @@
   box-shadow: 0 8px 48px rgba(0,0,0,0.18);
   animation: dialogIn 0.4s cubic-bezier(0.4,0.2,0.2,1);
   align-items: stretch;
-  overflow: hidden; /* Verhindert äußeres Scrollen, Inhalt scrollt intern */
+  overflow: hidden; 
 }
 
 @keyframes dialogIn {
@@ -70,9 +69,9 @@
   gap: 18px;
   justify-content: flex-start;
   background: transparent;
-  min-width: 0; /* erlaubt flexibles Schrumpfen, verhindert Überlauf */
-  overflow-y: auto; /* Inhalt scrollt intern bei fester Dialoghöhe */
-  padding-right: 4px; /* Platz für evtl. Scrollbar */
+  min-width: 0; 
+  overflow-y: auto;
+  padding-right: 4px; 
 }
 .dialog-number {
   font-family: 'Fira Code', monospace;
@@ -274,8 +273,13 @@
     right: 16px;
   }
   .dialog-next {
-    right: 16px;
-    bottom: 16px;
+    position: static;
+    right: auto;
+    bottom: auto;
+    align-self: flex-start;
+    margin: 8px 0 0 0;
+    padding: 8px 12px;
+    width: auto;
   }
 }
 

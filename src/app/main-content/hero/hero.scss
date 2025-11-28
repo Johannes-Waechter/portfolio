@@ -169,21 +169,17 @@ h1 {
 }
 
 .mail:hover {
-  content: url('../../../../public/hero/icons/mail-white.png');
-  width: 32px;
-  height: 32px;
-
+  content: url('/hero/icons/mail-hover.svg');
+  background: transparent;
 }
 
 .github:hover {
-  content: url('../../../../public/hero/icons/Vector.png');
-  width: 32px;
-  height: 32px;
+  content: url('/hero/icons/vector.svg');
   background: transparent;
 }
 
 .linkedin:hover {
-  content: url('../../../../public/hero/icons/Linkedin-1.png');
+  content: url('/hero/icons/linkedin-hover.svg');
   background: transparent;
 }
 

@@ -42,7 +42,7 @@ export class Portfolio {
       dialogImage: 'portfolio/join.png',
       descriptionKey: 'PORTFOLIO.PROJECTS.CARESHARE.DESC',
       github: 'https://github.com/Johannes-Waechter/care-share-app',
-      live: 'https://github.com/Johannes-Waechter/care-share-app',
+      live: 'https://care-share.eu',
     },
   ];
 

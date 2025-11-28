@@ -18,9 +18,13 @@ export class Header implements OnInit, OnDestroy {
   ngOnInit() {
     const lang = this.translate.currentLang || this.translate.getDefaultLang() || this.translate.getBrowserLang() || 'en';
     this.currentLanguage = lang.startsWith('de') ? 'de' : 'en';
+    document.documentElement.classList.remove('language-en', 'language-de');
+    document.documentElement.classList.add('language-' + this.currentLanguage);
     this.langSub = this.translate.onLangChange.subscribe((event: any) => {
       const l = event.lang;
       this.currentLanguage = l.startsWith('de') ? 'de' : 'en';
+      document.documentElement.classList.remove('language-en', 'language-de');
+      document.documentElement.classList.add('language-' + this.currentLanguage);
     });
   }
 

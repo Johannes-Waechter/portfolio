@@ -16,21 +16,23 @@
         </button>
         <div class="language-slider"></div>
       </div>
-      <a href="#about-me">
+      <a [routerLink]="'/'" fragment="about-me">
         {{ 'HEADER.ABOUT_ME' | translate }}
         <span class="hover-point"></span>
       </a>
-      <a href="#skills">
+      <a [routerLink]="'/'" fragment="skills">
         {{ 'HEADER.SKILLS' | translate }}
         <span class="hover-point"></span>
       </a>
-      <a href="#projects">
+      <a [routerLink]="'/'" fragment="projects">
         {{ 'HEADER.PROJECTS' | translate }}
         <span class="hover-point"></span>
       </a>
     </nav>
 
-    <div class="logo"><img class="logo" src="header/logo/logo-colored.png" alt=""></div>
+    <a class="logo" [routerLink]="'/'" aria-label="Home">
+      <img class="logo" src="header/logo/logo-colored.png" alt="Logo" />
+    </a>
 
 
     <button class="burger" (click)="showMenu = true" aria-label="Open menu">
@@ -40,19 +42,19 @@
       <button class="close" (click)="showMenu = false" aria-label="Close menu">&times;</button>
       <ul>
         <li>
-          <a href="#about-me" (click)="showMenu = false">
+          <a [routerLink]="'/'" fragment="about-me" (click)="showMenu = false">
             {{ 'HEADER.ABOUT_ME' | translate }}
             <span class="hover-point"></span>
           </a>
         </li>
         <li>
-          <a href="#skills" (click)="showMenu = false">
+          <a [routerLink]="'/'" fragment="skills" (click)="showMenu = false">
             {{ 'HEADER.SKILLS' | translate }}
             <span class="hover-point"></span>
           </a>
         </li>
         <li>
-          <a href="#projects" (click)="showMenu = false">
+          <a [routerLink]="'/'" fragment="projects" (click)="showMenu = false">
             {{ 'HEADER.PROJECTS' | translate }}
             <span class="hover-point"></span>
           </a>
