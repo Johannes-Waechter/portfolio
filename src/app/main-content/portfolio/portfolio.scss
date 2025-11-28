@@ -26,10 +26,7 @@
 }
 
 .portfolio-title {
-  font-family: 'Fira Code', monospace;
-  font-size: 48px;
-  font-weight: 700;
-  color: $ci-green;
+  @include h2-style;
   margin: 0 0 24px 0;
   letter-spacing: 0.01em;
 }

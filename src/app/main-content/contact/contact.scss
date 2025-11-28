@@ -1,3 +1,4 @@
+@import '../../../styles';
 
 .contact-container {
   max-width: 1440px;
@@ -5,8 +6,6 @@
   margin-right: auto;
   width: 100%;
 }
-
-@import '../../../styles';
 
 .form-error {
   color: #ff4d4f;
@@ -21,13 +20,13 @@
   padding: 0;
   display: block;
 }
+
 .contact-submit-btn.success {
   background: $ci-green;
   color: #1C1C1C;
   border: 1px solid $ci-green;
   transition: background 0.2s, color 0.2s;
 }
-
 
 .contact-section {
   display: flex;
@@ -93,10 +92,7 @@
 }
 
 .contact-left h2 {
-  font-family: 'Fira Code', monospace;
-  font-size: 72px;
-  font-weight: 700;
-  color: $ci-green;
+  @include h2-style;
   margin: 0 0 32px 0;
   line-height: 1.1;
   word-break: break-word;

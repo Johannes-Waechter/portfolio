@@ -40,12 +40,16 @@ export class Contact {
   success = false;
 
   onSubmit(ngForm: NgForm) {
-    if (!this.privacyChecked) {
-      this.showPrivacyError = true;
-      setTimeout(() => this.showPrivacyError = false, 3000);
+    const form = ngForm.form;
+
+    if (!this.privacyChecked || form.invalid) {
+      this.showPrivacyError = !this.privacyChecked;
+      form.markAllAsTouched();
+      Object.values(form.controls).forEach(c => c.updateValueAndValidity());
       return;
     }
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+
+    if (ngForm.submitted && form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response : any) => {
@@ -59,7 +63,7 @@ export class Contact {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (ngForm.submitted && form.valid && this.mailTest) {
       this.success = true;
       setTimeout(() => this.success = false, 3000);
       ngForm.resetForm();

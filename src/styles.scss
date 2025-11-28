@@ -15,6 +15,10 @@ html, body {
   font-size: 64px;
   line-height: 100%;
 }
+
+h2 {
+  @include h2-style;
+}
  @mixin h3-style {
     color: $ci-green;
     font-family: 'Karla', sans-serif;
