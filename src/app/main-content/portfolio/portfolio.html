@@ -58,14 +58,14 @@
             <img src="portfolio/arrow_forward_big.svg" alt="Pfeil" class="dialog-link-arrow" />
           </a>
         </div>
+        <button class="dialog-next" (click)="nextDialog($event)">
+          <span class="dialog-next-label">{{ 'PORTFOLIO.NEXT' | translate }}</span>
+          <img src="portfolio/arrow_forward_big.svg" alt="Nächster Pfeil" class="dialog-next-arrow" />
+        </button>
       </div>
       <div class="dialog-image">
         <img [src]="projects[dialogIndex].dialogImage" alt="Project Screenshot" />
       </div>
-      <button class="dialog-next" (click)="nextDialog($event)">
-        <span class="dialog-next-label">{{ 'PORTFOLIO.NEXT' | translate }}</span>
-        <img src="portfolio/arrow_forward_big.svg" alt="Nächster Pfeil" class="dialog-next-arrow" />
-      </button>
     </div>
   </div>
 </section>

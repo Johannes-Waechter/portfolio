@@ -267,7 +267,7 @@
   
   .dialog-image { display: none; }
   .dialog-image-inline { display: block; margin: 8px 0 16px 0; }
-  .dialog-image-inline img { max-width: 600px; }
+  .dialog-image-inline img { max-width: 450px; }
   .dialog-close {
     top: 12px;
     right: 16px;
@@ -276,10 +276,12 @@
     position: static;
     right: auto;
     bottom: auto;
-    align-self: flex-start;
+    align-self: flex-start; 
     margin: 8px 0 0 0;
     padding: 8px 12px;
     width: auto;
+    display: inline-flex;
+    justify-content: center;
   }
 }
 

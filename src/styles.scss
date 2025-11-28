@@ -8,6 +8,17 @@ html, body {
  $ci-green: #3DCFB6;
  $ci-green-10: rgba(61, 207, 182, 0.1);
 
+
+:root {
+  --page-gutter: 2rem;
+}
+@media (max-width: 900px) {
+  :root { --page-gutter: 16px; }
+}
+@media (max-width: 600px) {
+  :root { --page-gutter: 12px; }
+}
+
 @mixin h2-style {
   color: $ci-green;
   font-family: 'Fira Code', monospace;

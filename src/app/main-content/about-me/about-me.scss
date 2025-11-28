@@ -10,7 +10,7 @@ h2 {
     width: 100%;
     max-width: 1440px;
     margin: 64px auto; // Abstand oben und unten
-    padding: 32px 2rem 0 2rem; /* Extra Top-Padding damit Überschrift nie abgeschnitten wirkt */
+    padding: 32px var(--page-gutter) 0 var(--page-gutter); /* Extra Top-Padding damit Überschrift nie abgeschnitten wirkt */
     box-sizing: border-box;
     scroll-margin-top: 120px; /* Falls direkt zu Section gesprungen wird */
 }
@@ -154,7 +154,7 @@ h2 {
 
 @media (max-width: 900px) {
     .about-me-section-wrapper {
-        padding: 24px 16px 0 16px; /* Mobile ebenfalls etwas Luft oben */
+        padding: 24px var(--page-gutter) 0 var(--page-gutter); /* Mobile ebenfalls etwas Luft oben */
     }
     .about-me-section {
         flex-direction: column;
@@ -206,5 +206,26 @@ h2 {
     }
     .about-me-textbox {
         padding-top: 32px; /* Etwas Raum, aber kompakter Gesamtblock */
+    }
+}
+
+/* Kleine Breiten: Verhindere Beschnitt ab ~350px bis 320px */
+@media (max-width: 360px) {
+    .about-me-section-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .about-me-image-container,
+    .about-me-content {
+        min-width: 0; /* darf unter 320px schrumpfen, um Beschnitt zu vermeiden */
+    }
+    .about-me-textbox {
+        padding: 24px 16px 20px 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .about-me-textbox {
+        padding: 20px 12px;
     }
 }
