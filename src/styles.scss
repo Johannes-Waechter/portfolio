@@ -24,11 +24,12 @@ html, body {
   font-family: 'Fira Code', monospace;
   font-weight: 700;
   font-size: 64px;
-  line-height: 100%;
+  line-height: 1.1;
 }
 
 h2 {
   @include h2-style;
+  margin: 0 0 32px 0;
 }
  @mixin h3-style {
     color: $ci-green;
@@ -62,7 +63,7 @@ h2 {
 
 /* karla-300 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Karla';
   font-style: normal;
   font-weight: 300;
@@ -70,7 +71,7 @@ h2 {
 }
 /* karla-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Karla';
   font-style: normal;
   font-weight: 400;
@@ -78,7 +79,7 @@ h2 {
 }
 /* karla-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
@@ -87,7 +88,7 @@ h2 {
 
 /* fira-code-300 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 300;
@@ -95,7 +96,7 @@ h2 {
 }
 /* fira-code-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 400;
@@ -103,7 +104,7 @@ h2 {
 }
 /* fira-code-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; 
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 700;
@@ -150,6 +151,7 @@ h2 {
   h1 {
     font-size: 48px;
   }
+  h2 { font-size: 56px; margin: 0 0 28px 0; }
   .carousel-card {
     width: 320px;
     font-size: 16px;
@@ -173,6 +175,7 @@ h2 {
   h1 {
     font-size: 32px;
   }
+  h2 { font-size: 48px; margin: 0 0 24px 0; }
   .carousel-card {
     width: 90vw;
     font-size: 15px;
@@ -180,13 +183,23 @@ h2 {
   }
 }
 
+@media (max-width: 480px) {
+  h2 { font-size: 42px; margin: 0 0 20px 0; }
+}
+
+@media (max-width: 360px) {
+  h2 { font-size: 38px; margin: 0 0 18px 0; }
+}
+
 @media (max-width: 320px) {
   h1 {
     font-size: 22px;
   }
+  h2 { font-size: 34px; margin: 0 0 16px 0; }
   .carousel-card {
     width: 98vw;
     font-size: 13px;
     padding: 4px 2px;
   }
 }
+

@@ -91,7 +91,6 @@
 }
 
 .contact-left h2 {
-  @include h2-style;
   margin: 0 0 32px 0;
   line-height: 1.1;
   word-break: break-word;
@@ -181,16 +180,14 @@
   transition: border-color 0.2s;
 }
 
-/* Autofill Styling: set white background and dark text */
 .contact-form-group input:-webkit-autofill,
 .contact-form-group textarea:-webkit-autofill {
   -webkit-text-fill-color: #fff !important;
   caret-color: #fff;
-  box-shadow: 0 0 0 1000px #1C1C1C inset !important; /* match dark bg */
+  box-shadow: 0 0 0 1000px #1C1C1C inset !important;
   border-bottom: 2px solid $ci-green !important;
 }
 
-/* Keep hover/focus consistent with autofill */
 .contact-form-group input:-webkit-autofill:focus,
 .contact-form-group textarea:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff !important;
@@ -198,7 +195,6 @@
   border-bottom: 2px solid lighten($ci-green, 10%) !important;
 }
 
-/* Firefox autofill */
 .contact-form-group input:-moz-autofill,
 .contact-form-group textarea:-moz-autofill {
   background-color: transparent !important;
@@ -217,8 +213,9 @@
 
 .contact-form-privacy {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-top: 8px;
   background: transparent;
 }
@@ -227,11 +224,8 @@
   display: flex;
   align-items: center;
   font-family: 'Karla', sans-serif;
-  font-size: 16px;
-  color: #fff;
-  gap: 8px;
-  cursor: pointer;
-  background: transparent;
+  color: whitesmoke;
+  
 }
 
 .contact-checkbox input[type="checkbox"] {
@@ -242,13 +236,13 @@
 }
 
 .privacy-link {
-  color: $ci-green;
+  color: lighten($ci-green, 20%);
   text-decoration: underline;
   transition: color 0.2s;
 }
 
 .privacy-link:hover {
-  color: lighten($ci-green, 10%);
+  color: lighten($ci-green, 30%);
 }
 
 .contact-submit-btn {
@@ -283,14 +277,13 @@
     padding-right: var(--page-gutter);
     gap: 24px;
   }
-  .contact-left h2 { font-size: 56px; }
+
   .contact-left h4 { font-size: 24px; }
   .contact-form-group label { font-size: 20px; }
   .contact-desc { font-size: 16px; }
 }
 
 @media (max-width: 600px) {
-  .contact-left h2 { font-size: 48px; line-height: 1.1; }
   .contact-left h4 { font-size: 22px; }
   .contact-form { gap: 24px; }
   .contact-form-group label { font-size: 19px; }
@@ -298,7 +291,6 @@
 }
 
 @media (max-width: 480px) {
-  .contact-left h2 { font-size: 42px; }
   .contact-left h4 { font-size: 20px; }
   .contact-form-group label { font-size: 18px; }
   .contact-desc { font-size: 14.5px; }
@@ -306,7 +298,6 @@
 }
 
 @media (max-width: 360px) {
-  .contact-left h2 { font-size: 38px; }
   .contact-left h4 { font-size: 19px; }
   .contact-form-group label { font-size: 17px; }
   .contact-desc { font-size: 14px; }
@@ -314,7 +305,7 @@
 }
 
 @media (max-width: 320px) {
-  .contact-left h2 { font-size: 34px; }
+  
   .contact-left h4 { font-size: 18px; }
   .contact-form-group label { font-size: 16px; }
   .contact-desc { font-size: 13.5px; }

@@ -26,7 +26,6 @@
 }
 
 .portfolio-title {
-  @include h2-style;
   margin: 0 0 24px 0;
   letter-spacing: 0.01em;
 }
@@ -75,7 +74,7 @@
   left: 12px;
   width: 296px;
   height: 192px;
-  background-image: url('../../../../public/portfolio/Capa_1.svg');
+  background-image: url('/portfolio/Capa_1.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -93,7 +92,7 @@
 }
 
 .portfolio-preview[data-project="join"]::after {
-  background-image: url('../../../../public/portfolio/join.png');
+  background-image: url('/portfolio/join.png');
   top: 0px;
 }
 .portfolio-preview[data-project="join"]::before {
@@ -101,7 +100,7 @@
 }
 
 .portfolio-preview[data-project="el-pollo-loco"]::after {
-  background-image: url('../../../../public/portfolio/el-pollo-loco.png');
+  background-image: url('/portfolio/el-pollo-loco.png');
   top: 40px; 
 }
 .portfolio-preview[data-project="el-pollo-loco"]::before {
@@ -109,7 +108,7 @@
 }
 
 .portfolio-preview[data-project="careshare"]::after {
-  background-image: url('../../../../public/portfolio/join.png');
+  background-image: url('/portfolio/care-share.png');
   top: 66px; 
 }
 .portfolio-preview[data-project="careshare"]::before {
@@ -132,7 +131,7 @@
 
 .portfolio-item {
   width: 100%;
-  padding: 24px 0px 24px 16px;
+  padding: 24px 0 24px 16px;
   margin: 0 -16px;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -146,8 +145,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0px;
-  right: -16px; 
+  left: 0;
+  right: -16px;
   background: transparent;
   transition: background-color 0.3s ease;
   pointer-events: none;
@@ -229,24 +228,38 @@
     padding-right: var(--page-gutter);
     margin: 64px 0; 
   }
-  /* Unter 900px Titel und Tags untereinander */
+  
   .portfolio-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  /* Auf Mobil kein Überstand – Hover-Hintergrund auf volle Breite */
+  
+ 
+  
+  .portfolio-project-title {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.1;
+  }
+  .portfolio-item:hover .portfolio-project-title::after {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    vertical-align: middle;
+    transform: translateY(1px) rotate(-45deg);
+  }
+  
   .portfolio-item::before {
     left: 0;
-    right: 0;
+    right: -16px;
   }
   .portfolio-section h3 { font-size: 20px; margin-left: 8px; }
   .portfolio-desc { font-size: 15px; margin-left: 8px; max-width: 100%; }
-  .portfolio-item { margin: 0; padding: 20px 12px; }
   .portfolio-divider { width: 100%; margin: 0; }
 }
 
-/* Gestapelt und linksbündig auf allen Breiten */
+ 
 
 @media (max-width: 600px) {
 

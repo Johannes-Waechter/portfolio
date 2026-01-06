@@ -17,6 +17,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $email = $params->email;
         $name = $params->name;
         $message = $params->message;
+        $lang = isset($params->lang) ? $params->lang : 'en';
 
         $recipient = 'mail@johannes-waechter.de';  
         $subject = "Contact From <$email>";
@@ -32,8 +33,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
         mail($recipient, $subject, $mailMessage, implode("\r\n", $headers));
 
         // Bestätigungsmail an Interessenten
-        $confirmationSubject = "Thank you for contacting us";
-        $confirmationMessage = "Hello $name,<br><br>Thank you for reaching out! We received your message and will get back to you shortly.<br><br>Best regards,<br>Johannes";
+        if ($lang === 'de') {
+            $confirmationSubject = "Danke für deine Nachricht";
+            $confirmationMessage = "Hallo $name,<br><br>Vielen Dank für deine Kontaktaufnahme! Ich haben deine Nachricht erhalten und werden uns in Kürze bei dir melden.<br><br>Beste Grüße,<br>Johannes";
+        } else {
+            $confirmationSubject = "Thank you for contacting us";
+            $confirmationMessage = "Hello $name,<br><br>Thank you for reaching out! We received your message and will get back to you shortly.<br><br>Best regards,<br>Johannes";
+        }
 
         $confirmationHeaders   = array();
         $confirmationHeaders[] = 'MIME-Version: 1.0';

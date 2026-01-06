@@ -39,7 +39,7 @@
       <label class="contact-checkbox">
         <input type="checkbox" required [(ngModel)]="privacyChecked" name="privacyChecked" #privacyCheckedModel="ngModel" />
         <span>
-          {{ 'CONTACT.PRIVACY_1' | translate }} <a href="/privacy-policy" class="privacy-link">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a> {{ 'CONTACT.PRIVACY_2' | translate }}
+          {{ 'CONTACT.PRIVACY_1' | translate }} <a [routerLink]="['/privacy-policy']" class="privacy-link">{{ 'CONTACT.PRIVACY_LINK' | translate }}</a> {{ 'CONTACT.PRIVACY_2' | translate }}
         </span>
       </label>
       <div *ngIf="showPrivacyError" class="form-error">

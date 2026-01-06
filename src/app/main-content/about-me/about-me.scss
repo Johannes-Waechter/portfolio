@@ -1,24 +1,23 @@
 @import '../../../styles';
 
 h2 {
-    @include h2-style;
-    margin-bottom: 32px; /* Einheit korrigiert */
-    scroll-margin-top: 120px; /* Beim Ankern nicht von Header überdeckt */
+    margin-bottom: 32px;
+    scroll-margin-top: 120px;
 }
 
 .about-me-section-wrapper {
     width: 100%;
     max-width: 1440px;
-    margin: 64px auto; // Abstand oben und unten
-    padding: 32px var(--page-gutter) 0 var(--page-gutter); /* Extra Top-Padding damit Überschrift nie abgeschnitten wirkt */
+    margin: 64px auto;
+    padding: 32px var(--page-gutter) 0 var(--page-gutter);
     box-sizing: border-box;
-    scroll-margin-top: 120px; /* Falls direkt zu Section gesprungen wird */
+    scroll-margin-top: 120px;
 }
 
 .about-me-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; // Abstand zwischen Bild und Text
+    justify-content: space-between;
     align-items: center; 
     padding-left: 0;
     padding-right: 0;
@@ -37,47 +36,49 @@ h2 {
 .about-me-image-container {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    /* entfernte feste Höhe, erlaubt dynamisches Wachsen */
+    max-width: clamp(240px, 50vw, 568px);
     z-index: 1;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
 }
 
 .about-me-image {
-    width: clamp(320px, 40vw, 568px);
+    width: 100%;
+    max-width: 568px;
     height: auto;
     border-radius: 30px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
     position: relative;
     z-index: 2;
-    transition: filter 0.3s;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .about-me-image-bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: clamp(320px, 40vw, 568px);
-    height: clamp(320px, 40vw, 568px);
-    transform: translate(-50%, -50%);
+    top: calc(0% + 20px);
+    left: calc(0% - 40px);
+    width: 100%;
+    max-width: 568px;
+    aspect-ratio: 1 / 1;
+    transform: translate(0%, 0%);
     background: url('../../../../public/about-me/Capa_1.png') center/cover no-repeat;
     opacity: 0;
     border-radius: 30px;
-    z-index: 0;
-    transition: opacity 0.3s;
+    z-index: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: left top;
     pointer-events: none;
+    filter: drop-shadow(0 4px 16px rgba(61, 207, 182, 0.25));
 }
 
-.about-me-image-container:hover .about-me-image-bg {
-    opacity: 1;
-}
+.about-me-image-container:hover .about-me-image-bg { opacity: 1; transform: scale(1.06); }
+.about-me-image-container:hover .about-me-image { transform: scale(1.03); filter: brightness(0.95); }
 
 .about-me-content {
     width: 100%;
     max-width: 568px;
-    /* entfernte feste Höhe */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -97,7 +98,7 @@ h2 {
     background: $ci-green-10;
     border: 2px solid $ci-green;
     border-radius: 16px;
-    padding: 40px 32px 32px 32px; /* Mehr Top-Padding für Überschrift Sichtbarkeit */
+    padding: 40px 32px 32px 32px;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
@@ -121,16 +122,14 @@ h2 {
         font-family: 'Karla', sans-serif;
         font-weight: 400;
         font-size: 16px;
-        color: #fff; // Standard: weiß
+        color: #fff;
         line-height: 150%;
         margin: 0;
         background-color: transparent;
         transition: color 0.2s;
     }
 
-    &:hover > p {
-        color: rgba(255, 255, 255, 0.8); // Hover: wie bisher
-    }
+    &:hover > p { color: rgba(255, 255, 255, 0.8); }
 }
 
 .about-me-icon {
@@ -141,45 +140,34 @@ h2 {
 }
 
 @media (max-width: 1200px) {
-    .about-me-image-container {
-        max-width: 400px;
-    }
-    .about-me-image,
-    .about-me-image-bg {
-        width: clamp(300px, 50vw, 400px);
-        height: clamp(300px, 50vw, 400px);
-        border-radius: 24px;
-    }
+    .about-me-image-container { max-width: clamp(240px, 50vw, 480px); }
+    .about-me-image { max-width: 480px; border-radius: 24px; }
+    .about-me-image-bg { max-width: 480px; border-radius: 24px; }
 }
 
 @media (max-width: 900px) {
     .about-me-section-wrapper {
-        padding: 24px var(--page-gutter) 0 var(--page-gutter); /* Mobile ebenfalls etwas Luft oben */
+        padding: 24px var(--page-gutter) 0 var(--page-gutter);
     }
     .about-me-section {
         flex-direction: column;
         padding-left: 0;
         padding-right: 0;
         gap: 24px;
-        align-items: stretch; // Textbox nimmt volle Breite
+        align-items: stretch;
     }
     .about-me-image-container,
     .about-me-content {
         max-width: 100%;
     }
         .about-me-image-container {
-                width: 100%;
-                max-width: 320px;
-                margin: 0 auto;
-                justify-content: center;
+            width: 100%;
+            max-width: none;
+            margin: 0 auto;
+            justify-content: center;
         }
-        .about-me-image,
-        .about-me-image-bg {
-                width: clamp(240px, 70vw, 320px);
-                height: clamp(240px, 70vw, 320px);
-                aspect-ratio: 1 / 1;
-                border-radius: 20px;
-        }
+        .about-me-image { width: calc(100% - 20px); max-width: none; border-radius: 20px; }
+        .about-me-image-bg { width: calc(100% - 20px); max-width: none; aspect-ratio: 1 / 1; border-radius: 20px; }
     .about-me-content {
                 width: 100%;
         padding-bottom: 0;
@@ -190,26 +178,16 @@ h2 {
 
 /* Bei sehr niedriger Fensterhöhe: Bild zuerst schrumpfen statt Text wegdrücken */
 @media (max-height: 800px) {
-    .about-me-image,
-    .about-me-image-bg {
-        width: clamp(200px, 35vh, 440px);
-        height: clamp(200px, 35vh, 440px);
-    }
+    .about-me-image { max-width: clamp(200px, 35vh, 440px); }
+    .about-me-image-bg { max-width: clamp(200px, 35vh, 440px); }
 }
 
 @media (max-height: 600px) {
-    .about-me-image,
-    .about-me-image-bg {
-        width: clamp(160px, 30vh, 360px);
-        height: clamp(160px, 30vh, 360px);
-        border-radius: 18px;
-    }
-    .about-me-textbox {
-        padding-top: 32px; /* Etwas Raum, aber kompakter Gesamtblock */
-    }
+    .about-me-image { max-width: clamp(160px, 30vh, 360px); border-radius: 18px; }
+    .about-me-image-bg { max-width: clamp(160px, 30vh, 360px); border-radius: 18px; }
+    .about-me-textbox { padding-top: 32px; }
 }
 
-/* Kleine Breiten: Verhindere Beschnitt ab ~350px bis 320px */
 @media (max-width: 360px) {
     .about-me-section-wrapper {
         padding-left: 16px;
@@ -217,7 +195,7 @@ h2 {
     }
     .about-me-image-container,
     .about-me-content {
-        min-width: 0; /* darf unter 320px schrumpfen, um Beschnitt zu vermeiden */
+        min-width: 0;
     }
     .about-me-textbox {
         padding: 24px 16px 20px 16px;

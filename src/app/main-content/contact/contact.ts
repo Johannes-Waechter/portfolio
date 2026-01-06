@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, TranslatePipe, FormsModule],
+  imports: [CommonModule, TranslatePipe, FormsModule, RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
@@ -15,15 +16,16 @@ export class Contact {
   showPrivacyError = false;
 
   http = inject(HttpClient);
+  translate = inject(TranslateService);
 
   contactData = {
     name: "",
-    email : "",
+    email: "",
     message: "",
 
   }
 
-    mailTest = false;
+  mailTest = false;
 
   post = {
     endPoint: 'https://johannes-waechter.de/sendMail.php',
@@ -50,9 +52,10 @@ export class Contact {
     }
 
     if (ngForm.submitted && form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+      const payload = { ...this.contactData, lang: this.translate.currentLang || 'en' };
+      this.http.post(this.post.endPoint, this.post.body(payload))
         .subscribe({
-          next: (response : any) => {
+          next: (response: any) => {
             this.success = true;
             setTimeout(() => this.success = false, 3000);
             ngForm.resetForm();

@@ -37,7 +37,6 @@
   background: transparent;
 }
 
-.privacy-policy-section h2,
 .privacy-policy-section h3,
 .privacy-policy-section h4 {
   font-family: 'Fira Code', monospace;
@@ -47,7 +46,6 @@
   margin-bottom: 8px;
   background: transparent;
 }
-.privacy-policy-section h2 { font-size: 28px; }
 .privacy-policy-section h3 { font-size: 24px; }
 .privacy-policy-section h4 { font-size: 20px; }
 
@@ -99,7 +97,6 @@
     padding: 24px 8px;
   }
   .privacy-policy-section h1 { font-size: 36px; }
-  .privacy-policy-section h2 { font-size: 22px; }
   .privacy-policy-section h3 { font-size: 20px; }
   .privacy-policy-section h4 { font-size: 18px; }
   .privacy-policy-section *,
@@ -123,7 +120,6 @@
   }
 }
 
-/* Override: Alle Texte außer Überschriften in grün (hoch spezifisch) */
 .privacy-policy-section .privacy-policy-content p,
 .privacy-policy-section .privacy-policy-content div,
 .privacy-policy-section .privacy-policy-content ul,
@@ -131,7 +127,6 @@
   color: $ci-green !important;
 }
 
-/* Links ebenfalls grün, mit Unterstreichung – ohne !important */
 .privacy-policy-section .privacy-policy-content a {
   color: $ci-green;
   text-decoration: underline;

@@ -8,7 +8,6 @@
 }
 
 h2 {
-  @include h2-style;
   margin-bottom: 32px;
   background: transparent;
 }
@@ -132,18 +131,19 @@ h2 {
   background: $ci-green-10;
   border: 2px solid $ci-green;
   border-radius: 16px;
-  padding: 32px;
+  padding: 24px;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   font-family: 'Karla', sans-serif;
   color: #fff;
-  gap: 40px;
+  gap: 16px;
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
   height: 100%;
-  justify-content: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
 }
 
@@ -169,7 +169,7 @@ h2 {
   letter-spacing: 0;
   margin-bottom: 8px;
   background: transparent;
-  margin-top: 50px;
+  margin-top: 24px;
 }
 
 .skills-contact h4 .highlight-green {

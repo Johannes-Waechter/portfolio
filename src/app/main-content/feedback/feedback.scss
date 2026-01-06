@@ -47,7 +47,7 @@
   width: 38px;
   height: 38px;
   transition: all 0.2s;
-  transition: opacity 0.55s ease; /* nur Fade für Seitenkarten */
+  transition: opacity 0.55s ease;
   will-change: opacity;
 }
 
@@ -115,7 +115,7 @@
   pointer-events: auto;
   transition:
     transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1),
-    opacity 0.55s ease; /* nur Center bewegt sich weich */
+    opacity 0.55s ease;
 
 }
 
@@ -130,8 +130,8 @@
 
 .carousel-quote-icon {
   position: absolute;
-  top: -40px; /* weiter außerhalb über dem Kartenrand */
-  left: 340px; /* leicht über linken Rand hinaus */
+  top: -40px;
+  left: 340px;
   width: 64px;
   height: 64px;
   background: url('../../../../public/feedback/quotes.svg') no-repeat center/contain;
@@ -141,18 +141,7 @@
 }
 
 
-// /* Ein- und Ausfahr-Animationen */
-// .carousel-card.slide-left { animation: slideLeft 0.2s; }
-// .carousel-card.slide-right { animation: slideRight 0.2s; }
-
-// @keyframes slideLeft {
-//   from { opacity: 0; transform: scale(0.96) translateX(-160%); }
-//   to   { opacity: 1; transform: scale(0.96) translateX(-140%); }
-// }
-// @keyframes slideRight {
-//   from { opacity: 0; transform: scale(0.96) translateX(55%); }
-//   to   { opacity: 1; transform: scale(0.96) translateX(55%); }
-// }
+ 
 
 
 .carousel-text {
