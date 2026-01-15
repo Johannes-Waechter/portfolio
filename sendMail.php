@@ -35,10 +35,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         // Bestätigungsmail an Interessenten
         if ($lang === 'de') {
             $confirmationSubject = "Danke für deine Nachricht";
-            $confirmationMessage = "Hallo $name,<br><br>Vielen Dank für deine Kontaktaufnahme! Ich haben deine Nachricht erhalten und werden uns in Kürze bei dir melden.<br><br>Beste Grüße,<br>Johannes";
+            $confirmationMessage = "Hallo $name,<br><br>Vielen Dank für deine Kontaktaufnahme! Ich habe deine Nachricht erhalten und werde uns in Kürze bei dir melden.<br><br>Beste Grüße,<br>Johannes";
         } else {
-            $confirmationSubject = "Thank you for contacting us";
-            $confirmationMessage = "Hello $name,<br><br>Thank you for reaching out! We received your message and will get back to you shortly.<br><br>Best regards,<br>Johannes";
+            $confirmationSubject = "Thank you for contac me";
+            $confirmationMessage = "Hello $name,<br><br>Thank you for reaching out! I received your message and will get back to you shortly.<br><br>Best regards,<br>Johannes";
         }
 
         $confirmationHeaders   = array();

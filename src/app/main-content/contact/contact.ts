@@ -52,7 +52,10 @@ export class Contact {
     }
 
     if (ngForm.submitted && form.valid && !this.mailTest) {
-      const payload = { ...this.contactData, lang: this.translate.currentLang || 'en' };
+      const currentLang = this.translate.currentLang || 'en';
+      const langCode = currentLang.startsWith('de') ? 'de' : 'en';
+      const payload = { ...this.contactData, lang: langCode };
+      console.log('Sending payload:', payload); // Debug log
       this.http.post(this.post.endPoint, this.post.body(payload))
         .subscribe({
           next: (response: any) => {
